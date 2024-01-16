@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php require('C:\xampp\htdocs\bca4thproject\Admin\AdminHeader\AdminNavcss.php');?>
     <link rel="stylesheet" href="Admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap"
@@ -15,24 +16,8 @@
 
 <body>
     <div class="main-container">
-        <div class="child-container" id="admin-header">
-            <div class="logo">
-                <img src="book.png" alt="Error loading">
-                <p>Library Management System</p>
-            </div>
-            <div class="loginbtn">
-                <button>Logout</button>
-            </div>
-        </div>
-        <div class="child-container" id="admin-nav">
-            <div class="nav-items"><a href="AdminDashboard.html">DASHBOARD</a></div>
-            <div class="nav-items"><a href="">TOTAL BOOKS</a></div>
-            <div class="nav-items"><a href="">ADD BOOKS</a></div>
-            <div class="nav-items"><a href="">ISSUE BOOKS</a></div>
-            <div class="nav-items"><a href="">RETURN BOOKS</a></div>
-            <div class="nav-items"><a href="">MEMBERS</a></div>
-
-        </div>
+        <?php require('C:\xampp\htdocs\bca4thproject\Admin\AdminHeader\AdminNav.php');?>
+     
         <div class="child-container" id="admin-body">
             <div>
                 <h2>Admin Dashboard</h2>

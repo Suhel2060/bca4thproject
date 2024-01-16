@@ -1,0 +1,104 @@
+
+.addstudent-container{
+    display: flex;
+}
+section {
+    position: relative;
+    margin: 25px 30px;
+    background-color: white;
+    padding: 6px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#studentadd-form{
+    max-width: 500px;
+}
+h2{
+    margin: 15px 19px;
+    text-align: center;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Poppins;
+}
+
+input {
+    width: 385px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+#Add-btn{
+    text-align: center;
+}
+.Addbooks-btn{
+    margin: 17px 20px;
+    display: inline-block;
+    height: 38px;
+    border-radius: 10px;
+    text-align: center;
+    width: 123px;
+    font-size: 13px;
+    font-family: Poppins;
+    text-align: center;
+}
+
+/* 
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+
+button:hover {
+    background-color: skyblue;
+}
+
+#studentsList {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: skyblue;
+    color: white;
+}
+tbody{
+    margin: 30px 0px 0px 0px;
+}
+#studentsList{
+    position: absolute;
+    right: 30px;
+width: 58vw;
+overflow-y: scroll;
+max-height: 94vh;
+
+}
+
+#table-image{
+ width: 18%;
+}
+
+#table-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
