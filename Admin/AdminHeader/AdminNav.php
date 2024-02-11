@@ -5,8 +5,9 @@
             </div>
             <div class="loginbtn">
                 <button>Logout</button>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </div>
-        </div>
+ </div>
         <div class="child-container" id="admin-nav">
             <div class="nav-items" id="Dashboard"><a href="../AdminDashboard/AdminDashboard.php" target="_self">DASHBOARD</a></div>
             <div class="nav-items" id="Allbooks"><a href="../Adminshowbooks/Adminshowbooks.php" target="_self">TOTAL BOOKS</a></div>

@@ -13,7 +13,7 @@
         <div class='image'>
             <img src='harrypotter.png' alt=''>
         </div>
-        <h2>Bookname</h2>
+        <h2 class="hover-bookname">Bookname</h2>
         <p class='main-book-details'>catagory</p>
         <p class='main-book-details'>Author Name</p>
         <p class='main-book-details'>Publication Name</p>

@@ -80,12 +80,20 @@
     margin: 15px 0px 15px 20px;
     overflow: hidden;
     border-radius: 30px;
+    /* transition: transform 0.3s ease-in-out; */
 }
+/* .book-details:hover{
+    transform: scale(1.2);
+} */
 .book-details img{
     object-fit: cover;
     width: 100%;
     height: 100%;
     opacity: 0.7px;
+    transition: transform 0.3s ease-out;
+}
+.book-details img:hover{
+    transform: scale(1.06);
 }
 .icon{
     right: 15px;
@@ -104,12 +112,13 @@
 .book-description{
     position: absolute;
     z-index: 10;
-    top: 110px;
-    padding: 0px 25px;
+    top: 155px;
+    /* padding: 0px 25px; */
     border: 0.5px solid black;
     background-color: rgb(0 0 0 / 49%);
     color: white;
     width: 100%;
+    text-align: center;
 }
 
 .book-description h3{
@@ -135,7 +144,7 @@
     color: white;
     position: absolute;
     z-index: 100;
-
+    transition: all 1s ease-in-out;
 
 }
 

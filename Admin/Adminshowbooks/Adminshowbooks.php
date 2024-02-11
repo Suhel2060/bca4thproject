@@ -20,26 +20,22 @@
 
     <div class="showbook-main-container">
         <div class="book-details-container">
-            <div class="book-details" onmousemove="showdetails(event)" onmouseout="hidedetails()">
+            <div class="book-details" onmousemove="showdetails(22062021,event)" onmouseout="hidedetails()">
                 <img src="harrypotter.png" alt="error">
                 <div class="icon">
                     <i class="fa-solid fa-plus"></i>
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
                 </div>
             </div>
-            <div class="book-details" onmousemove="showdetails(event)" onmouseout="hidedetails()">
+            <div class="book-details" onmousemove="showdetails(22062021,event)" onmouseout="hidedetails()">
                 <img src="mathbook.png" alt="">
                 <div class="icon">
                     <i class="fa-solid fa-plus"></i>
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
                 </div>
             </div>
             <div class="book-details">
@@ -49,8 +45,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -60,8 +55,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -71,20 +65,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
-                </div>
-            </div>
-            <div class="book-details">
-                <img src="" alt="">
-                <div class="icon">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-                <div class="book-description">
-
-                    <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -95,8 +76,7 @@
                 <div class="book-description">
 
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -107,8 +87,18 @@
                 <div class="book-description">
 
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
+                </div>
+            </div>
+            <div class="book-details">
+                <img src="" alt="">
+                <div class="icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="book-description">
+
+                    <h3>Book Name</h3>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -118,8 +108,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -129,8 +118,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -140,8 +128,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -151,8 +138,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -162,8 +148,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -173,8 +158,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -184,8 +168,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -195,8 +178,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
             <div class="book-details">
@@ -206,8 +188,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    <p>Catagory</p>
-                    <p>Author name</p>
+                    
                 </div>
             </div>
         </div>
@@ -241,7 +222,8 @@
     <script>
         var flag = 0;
         var I;
-        function showdetails() {
+        function showdetails(a,event) {
+            console.log(a);
                 var x = event.pageX;
                  var y = event.pageY;
                  var x1=x-20;
