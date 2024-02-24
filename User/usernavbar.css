@@ -1,7 +1,21 @@
 *{
     margin: 0px;
     padding: 0px;
+
 }
+.maincontainer#blur.active{
+filter: blur(10px);
+user-select: none;
+pointer-events: none;
+}
+/* body::before{
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+background-size: cover;
+-webkit-filter: blur(20px); */
+
 
 header,aside,section{
     border: 2px solid black;
@@ -35,14 +49,22 @@ header{
 .border{
     border: 2px solid black;
 }
- #list{
+ #cross{
     display: none;
 }
 .user-search-book {
-    width: 30vw;
+    width: 40vw;
     height: 4vh;
-    position: relative;
+    display: flex;
+    flex-direction: row;
 
+
+}
+.searchfield{
+    margin: 0px 30px;
+}
+.searchbar{
+    position: relative;
 }
 .user-search-book i{
     position: absolute;
@@ -54,6 +76,7 @@ header{
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    padding: 0px 5px;
 }
 .user-search-filter select{
     border: none;
@@ -66,7 +89,21 @@ header{
     right: 30px;
     width: 95px;
     height: 35px;
+    border: 2px solid black;
 
+}
+.btn{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 32px;
+
+}
+.login-user{
+    position: relative;
+    right: 30px;
+    display: none;
 }
 .loginbtn button{
 width: 100%;
@@ -84,6 +121,14 @@ box-shadow: 2px 2px 2px 2px #aebdccdb; ;
     top: 7px;
     font-size: 20px;
 }
+#login{
+    display: block;
+    z-index: 5;
+}
+#logout{
+    display: none;
+    z-index: 1;
+}
 aside{
     width: 18%;
     height: 100%;
@@ -92,12 +137,13 @@ aside{
     margin-left: 4px;
     padding: 25px 0px;
     transition: width 300ms linear;
-    z-index: 10;
+    z-index: 2;
     background-color: aquamarine;
+    display: none;
 }
 
 .showhidenavbar{
-    display: none;
+    display: block;
 }
 .menu{
     position: relative;
@@ -115,31 +161,113 @@ aside{
     left: 26px;
 }
 section{
-    width: 100%;
+    width: 99%;
     position: absolute;
     right: 0px;
     /* top: 20vh; */
     height: 100%;
     top: 4.5rem;
-    z-index: -1;
     margin: 1px auto;
+    z-index: -1;
 
 }
+
+
+/* bookslider */
+.fa-arrow-left{
+    position: absolute;
+    left: 8px;
+    top: 136px;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 3px 6px;
+    z-index: 5;
+    background-color: azure;
+}
+.fa-arrow-right{
+    position: absolute;
+    right: 8px;
+    top: 136px;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 3px 6px;
+    z-index: 5;
+    background-color: azure;
+}
+/* .slider-container i{
+    position: absolute;
+    left: 8px;
+    top: 136px;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 3px 6px;
+    z-index: 5;
+    background-color: azure;
+}
+.slider-container:last-child{
+    right: 8px;
+}
+.slider-container:first-child{
+    right: 8px;
+} */
+.scroll-container{
+    position: relative;
+}
 .slider-container{
+
     max-width: 100%;
     max-height: 250px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin: 30px;
-    padding: 15px 30px;
-    overflow: hidden;
+    padding: 15px 0px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 0px;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100%/6));
-    gap: 5px;
+    grid-auto-columns: calc(102%/6);
+    gap: 0px;
+    scroll-behavior: smooth;
+    background-color: #f2f2f2;
 
+
+}
+.slider-container::-webkit-scrollbar{
+    display: none;
 }
 .book-slider{
     width: 210px;
     height: 221px;
     border: 2px solid black;
+    scroll-behavior: smooth;
+    display: inline-block;
+    scroll-snap-align: start;
+}
+
+.dragging{
+    scroll-snap-type: none;
+    user-select: none;
+}
+@media only screen and (max-width:1511px) {
+    .slider-container{
+        grid-auto-columns: calc(102%/5);
+    }
+}
+@media only screen and (max-width:1188px) {
+    .slider-container{
+        grid-auto-columns: calc(102%/4);
+    }
+}
+@media only screen and (max-width:961px) {
+    .slider-container{
+        grid-auto-columns: calc(102%/3);
+    }
+}
+@media only screen and (max-width:412px) {
+    .slider-container{
+        grid-auto-columns: calc(102%/1);
+    }
 }

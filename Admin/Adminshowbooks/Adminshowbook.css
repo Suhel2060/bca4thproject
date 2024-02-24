@@ -143,8 +143,8 @@
     background: #000000e6;
     color: white;
     position: absolute;
-    z-index: 100;
-    transition: all 1s ease-in-out;
+    z-index: 10;
+    /* transition: all 0.1s ease-in-out; */
 
 }
 

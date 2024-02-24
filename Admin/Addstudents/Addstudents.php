@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System</title>
-    <?php include('C:\xampp\htdocs\bca4thproject\Admin\AdminHeader\AdminNavcss.php'); ?>
+    <?php include('../AdminHeader/AdminNavcss.php'); ?>
     <link rel="stylesheet" href="Addstudents.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
+
 </head>
 
 <body>
-    <?php include('C:\xampp\htdocs\bca4thproject\Admin\AdminHeader\AdminNav.php'); ?>
+    <?php include('../AdminHeader/AdminNav.php'); ?>
     <div class="addstudent-container">
     <section id="studentadd-form">
         <h2>Add Student</h2>
-        <form id="addStudentForm">
+        <div id="addStudentForm">
         <div class="addstudents-items">
                 <label for="studentID">Username:</label>
                 <input type="text" id="studentID" name="studentID" required>
@@ -36,17 +37,17 @@
             </div>
             <div class="addstudents-items">
                 <label for="phoneNumber">Phone Number</label>
-                <input type="number" id="phoneNumber" name="studentCourse" required>
+                <input type="number" id="phoneNumber" name="phoneNumber" required>
             </div>
             <div class="addstudents-items">
                 <label for="Image">Image</label>
-                <input type="file" id="Image" name="studentCourse" required>
+                <input type="file" id="Image" name="Image" required>
             </div>
             <div class="addstudents-items" id="Add-btn">
-            <input type="submit" value="Add student" class="Addbooks-btn">
-            <input type="button" value="Update Student" class="Addbooks-btn">
+            <input type="button" value="Addstudent" class="Addstudent-btn" id="Addbtn">
+            <input type="button" value="UpdateStudent" class="Addstudent-btn" id="updatebtn">
             </div>
-        </form>
+</div>
     </section>
 
     <section id="studentsList">
@@ -227,7 +228,7 @@
         document.getElementById("studentCourse").value = "";
     }
 </script> -->
-
+    <script src="../Addstudents/addstudents.js"></script>
 </body>
 
 </html>

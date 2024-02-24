@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php include('C:\xampp\htdocs\bca4thproject\Admin\AdminHeader\AdminNavcss.php'); ?>
+    <?php include('../AdminHeader/AdminNavcss.php'); ?>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Adminaddbook.css">
 </head>
 
 <body>
-    <?php include('C:\xampp\htdocs\bca4thproject\Admin\AdminHeader\AdminNav.php'); ?>
+    <?php include('../AdminHeader/AdminNav.php'); ?>
     <div class="Add-book-container">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="Add-book-formitems">
