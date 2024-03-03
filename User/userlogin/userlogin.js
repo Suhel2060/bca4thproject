@@ -27,10 +27,12 @@ document.querySelector("#form-loginbtn").addEventListener("click",async(e)=>{
         userlogin(post_data.username);
         loginRetrieve();
         localStorage.setItem("User-name",post_data.username);
-        localStorage.setItem("userstatus",post_data.user_status)
+        localStorage.setItem("userstatus",post_data.user_status);
       }
       else{
-        window.location.href="../Admin/AdminDashboard/AdminDashboard.php";
+        localStorage.setItem("User-name",post_data.username);
+        localStorage.setItem("userstatus",post_data.user_status);
+        window.location.href="../admin/admindashboard/admindashboard.php";
       }
     }
     else{
@@ -70,6 +72,7 @@ function logout(){
   document.querySelector(".login-user").style.display="none";
   localStorage.removeItem("userstatus")
   localStorage.removeItem("User-name");
+
 }
 
 

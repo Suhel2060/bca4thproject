@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +8,9 @@
     <link rel="stylesheet" href="usernavbar.css">
     <script src="https://kit.fontawesome.com/6855e15ae1.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../User/userlogin/userlogin.css">
+    <link rel="stylesheet" href="../user/userlogin/userlogin.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Foldit:wght@300;500&family=Poppins:wght@400;500;600&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <script src="../User/usernavbar.js"></script>
+    <script src="../user/usernavbar.js"></script>
 </head>
 
 <body>
@@ -27,8 +26,8 @@
             </div>
             <div class="user-search-book">
                 <div class="searchbar searchfield">
-                <input type="text" id="" name="" placeholder="">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="" name="" placeholder="">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div class="user-search-filter searchfield">
                     <select name="" id="">
@@ -50,17 +49,17 @@
                 </div>
             </div>
             <div class="login-user">
-            <i class="fa-regular fa-user"></i>
-            <span id="user-name">suhel maharjan</span>
+                <i class="fa-regular fa-user"></i>
+                <span id="user-name">suhel maharjan</span>
             </div>
             <div class="loginbtn">
-              <div class="btn" id="login">  
-                <button onclick="show_login()">login</button>
-                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <div class="btn" id="login">
+                    <button onclick="show_login()">login</button>
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
                 </div>
-                <div class="btn" id="logout">  
-                <button onclick="logout()">logout</button>
-                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <div class="btn" id="logout">
+                    <button onclick="logout()">logout</button>
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
                 </div>
             </div>
 
@@ -91,141 +90,206 @@
             </aside>
             <section>
                 <div class="scroll-container">
-                <i class="fa-solid fa-arrow-left" id="left"></i>
-                <div class="slider-container">
-                
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                    <i class="fa-solid fa-arrow-left" id="left" onclick="left(this)"></i>
+                    <div class="slider-container">
+
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+
                     </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    
+                    <i class="fa-solid fa-arrow-right" id="right" onclick="right(this)"></i>
                 </div>
-                <i class="fa-solid fa-arrow-right" id="right"></i>
-            </div>
                 <div class="scroll-container">
-                <i class="fa-solid fa-arrow-left" id="left"></i>
-                <div class="slider-container">
-                
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                    <i class="fa-solid fa-arrow-left" id="left" onclick="left(this)"></i>
+                    <div class="slider-container">
+
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+
                     </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-                    <div class="book-slider" draggable="false">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
-                    </div>
-           
+                    <i class="fa-solid fa-arrow-right" id="right" onclick="right(this)"></i>
                 </div>
-                <i class="fa-solid fa-arrow-right" id="right"></i>
-            </div>
+                <div class="scroll-container">
+                    <i class="fa-solid fa-arrow-left" id="left" onclick="left(this)"></i>
+                    <div class="slider-container">
+
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+                        <div class="book-slider" draggable="false">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, recusandae.</p>
+                        </div>
+
+                    </div>
+                    <i class="fa-solid fa-arrow-right" id="right" onclick="right(this)"></i>
+                </div>
 
             </section>
         </div>
     </div>
     <!-- include login html -->
-    <?php include('../User/userlogin/userlogin.php'); ?>
+    <?php include('../user/userlogin/userlogin.php'); ?>
 
     <script>
         let icon = document.querySelector('aside');
@@ -251,50 +315,117 @@
             }, 100);
 
         }
-            //scrolling
-            const scrolling = document.querySelector('.slider-container');
-            const arrowbtns = document.querySelectorAll('.scroll-container i');
-            const firstcardwidth=document.querySelector('.book-slider').offsetWidth+25;
-            let isdragging = false,startX,startscrollleft;
+        //scrolling
+        //     const scrolling = document.querySelector('.slider-container');
+        //     const arrowbtns = document.querySelectorAll('.scroll-container i');
+        //     const firstcardwidth=document.querySelector('.book-slider').offsetWidth+25;
+        //     let isdragging = false,startX,startscrollleft;
 
-            arrowbtns.forEach(btn=>{
-                console.log(firstcardwidth);
-                btn.addEventListener('click',()=>{
-                    scrolling.classList.remove("dragging");
-                    scrolling.scrollLeft+=btn.id=='left'?-firstcardwidth:(firstcardwidth+5);
-                })
-            })
+        //     arrowbtns.forEach(btn=>{
+        //         console.log(firstcardwidth);
+        //         btn.addEventListener('click',()=>{
+        //             console.log(this.innerHTML);
+        //             scrolling.classList.remove("dragging");
+        //             scrolling.scrollLeft+=btn.id=='left'?-firstcardwidth:(firstcardwidth+5);
+        //         })
+        //     })
+        //     // function leftclick(t){
+        //     //     console.log(this);
+        //     // }
+        //     // function rightclick(t){
+        //     //     cnsole.log(t);
+        //     // }
 
-            const mousedragging = (e) => {
-                isdragging = true;
-                scrolling.classList.add("dragging");
-                //store the initial value of the scroll
-                startX=e.pageX;
-                startscrollleft=scrolling.scrollLeft;
+        //     const mousedragging = (e) => {
+        //         isdragging = true;
+        //         scrolling.classList.add("dragging");
+        //         //store the initial value of the scroll
+        //         startX=e.pageX;
+        //         startscrollleft=scrolling.scrollLeft;
 
+        //     }
+        //     const dragging = (e) => {
+        //         if (!isdragging) return;
+        //         //updates the scroll prosition of scrolling based on the cursor movement
+        //         scrolling.scrollLeft = startscrollleft-(e.pageX-startX);
+
+        //     }
+        //     const draggingStop = () => {
+        //         isdragging = false;
+        //         scrolling.classList.remove("dragging");
+        //     }
+        //     scrolling.addEventListener("mousemove", dragging);
+        //     scrolling.addEventListener("mousedown", mousedragging);
+        //     scrolling.addEventListener("mouseup", draggingStop);
+        // }
+
+
+        //scrolling
+        let scrolling, flag = 0;
+
+        // const arrowbtns = document.querySelectorAll('.scroll-container i');
+        const firstcardwidth = document.querySelector('.book-slider').offsetWidth + 25;
+        let isdragging = false,
+            startX, startscrollleft;
+
+        // arrowbtns.forEach(btn=>{
+        //     console.log(firstcardwidth);
+        //     btn.addEventListener('click',()=>{
+        //         console.log(this.innerHTML);
+        //         scrolling.classList.remove("dragging");
+        //         scrolling.scrollLeft+=btn.id=='left'?-firstcardwidth:(firstcardwidth+5);
+        //     })
+        // })
+        function left(t) {
+
+            scrolling = t.parentElement.children[1];
+            scrolling.classList.remove("dragging");
+            scrolling.scrollLeft -= firstcardwidth;
+            if (flag == 0) {
+                scrolling.addEventListener("mousemove", dragging);
+                scrolling.addEventListener("mousedown", mousedragging);
+                scrolling.addEventListener("mouseup", draggingStop);
             }
-            const dragging = (e) => {
-                if (!isdragging) return;
-                //updates the scroll prosition of scrolling based on the cursor movement
-                scrolling.scrollLeft = startscrollleft-(e.pageX-startX);
+            flag == 1;
 
+        }
+
+        function right(t) {
+            scrolling = t.parentElement.children[1];
+            scrolling.classList.remove("dragging");
+            scrolling.scrollLeft += (firstcardwidth + 5);
+            if (flag == 0) {
+                scrolling.addEventListener("mousemove", dragging);
+                scrolling.addEventListener("mousedown", mousedragging);
+                scrolling.addEventListener("mouseup", draggingStop);
             }
-            const draggingStop = () => {
-                isdragging = false;
-                scrolling.classList.remove("dragging");
-            }
-            scrolling.addEventListener("mousemove", dragging);
-            scrolling.addEventListener("mousedown", mousedragging);
-            scrolling.addEventListener("mouseup", draggingStop);
+            flag == 1;
+        }
+
+        const mousedragging = (e) => {
+            isdragging = true;
+            scrolling.classList.add("dragging");
+            //store the initial value of the scroll
+            startX = e.pageX;
+            startscrollleft = scrolling.scrollLeft;
+
+        }
+        const dragging = (e) => {
+            if (!isdragging) return;
+            //updates the scroll prosition of scrolling based on the cursor movement
+            scrolling.scrollLeft = startscrollleft - (e.pageX - startX);
+
+        }
+        const draggingStop = () => {
+            isdragging = false;
+            scrolling.classList.remove("dragging");
+        }
 
 
-            //for login using fetch
 
-
-
-
+        //for login using fetch
     </script>
-    <script src="../User/userlogin/userlogin.js"></script>
+    <script src="../user/userlogin/userlogin.js"></script>
 </body>
 
 </html>

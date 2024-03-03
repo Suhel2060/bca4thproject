@@ -1,70 +1,80 @@
-
-
-body{
-    font-family: Poppins;
+body {
+  font-family: Poppins;
 }
 
-#Addbooks{
-text-decoration: underline;
+#Addbooks {
+  text-decoration: underline;
 }
 
-.Add-book-container{
-    border: 10px solid #f6faff;
-    width: 460px;
-    /* height: 700px; */
-    margin: 30px auto;
-    font-size: 20px;
-    background-color: #f6faff;
-    padding: 10px 45px;
-    /* overflow-y: scroll; */
+.Add-book-container {
+  border: 10px solid #f6faff;
+  width: 460px;
+  /* height: 700px; */
+  margin: 30px auto;
+  font-size: 20px;
+  background-color: #f6faff;
+  padding: 10px 45px;
+  /* overflow-y: scroll; */
 }
-.Add-book-formitems{
-    margin: 20px 20px;
-}
-
-.form-inputs{
-    height: 29px;
-    width: 23vw;
-    padding: 0px 10px;
-    border: 1px solid black;
-    box-shadow:2px 3px 2px 1px #e0cece;
-    border-radius: 10px;
+.Add-book-formitems {
+  margin: 20px 20px;
 }
 
-
-.Add-book-formitems label{
-    display: inline-block;
-    /* border: 2px solid black; */
-    width: 205px;
+.form-inputs {
+  height: 29px;
+  width: 23vw;
+  padding: 0px 10px;
+  border: 1px solid black;
+  box-shadow: 2px 3px 2px 1px #e0cece;
+  border-radius: 10px;
 }
 
-.Add-book-formitems select{
-    width: 130px;
-    font-size: 17px;
-    height: 30px;
-}
-textarea{
-resize: none;
-width: 100%;
-box-sizing: border-box;
-border-radius: 10px;
-padding: 4px 10px;
+.Add-book-formitems label {
+  display: inline-block;
+  /* border: 2px solid black; */
+  width: 205px;
 }
 
-#form-btn{
+.Add-book-formitems select {
+  width: 130px;
+  font-size: 17px;
+  height: 30px;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 4px 10px;
+}
+
+#form-btn {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 3px 25px;
+  font-size: 16px;
+  border-radius: 15px;
+  margin: 0px 35px;
+}
+#form-btn .btn:hover {
+  color: blanchedalmond;
+  background-color: rgb(75, 75, 246);
+  cursor: pointer;
+}
+.message {
+    font-size: 15px;
     text-align: center;
+    font-family: cursive;
+    display: none;
 }
-
-.btn{
-    display: inline-block;
-    padding: 3px 25px;
-    font-size: 16px;
-    border-radius: 15px;
-    margin: 0px 35px;
-
+.success{
+    color: blue;
+    display: block;
 }
-#form-btn .btn:hover{
-    color: blanchedalmond;
-    background-color: rgb(75, 75, 246);
-    cursor: pointer;
+.failed{
+    color: red;
+    display: block;
 }

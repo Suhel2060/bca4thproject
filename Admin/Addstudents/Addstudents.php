@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["adminusername"])&&isset($_SESSION["userstatus"]))){
+header("Location:../../user/usernavbar.php");
+}
+else{
+    if($_SESSION["userstatus"]=="user"){
+        header("Location:../../../user/usernavbar.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,16 +17,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System</title>
-    <?php include('../AdminHeader/AdminNavcss.php'); ?>
-    <link rel="stylesheet" href="Addstudents.css">
+    <?php include('../adminheader/adminnavcss.php'); ?>
+    <link rel="stylesheet" href="addstudents.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6855e15ae1.js" crossorigin="anonymous"></script>
 
 
 </head>
 
 <body>
-    <?php include('../AdminHeader/AdminNav.php'); ?>
+    <?php include('../adminHeader/adminNav.php'); ?>
     <div class="addstudent-container">
     <section id="studentadd-form">
         <h2>Add Student</h2>
@@ -47,6 +60,10 @@
             <input type="button" value="Addstudent" class="Addstudent-btn" id="Addbtn">
             <input type="button" value="UpdateStudent" class="Addstudent-btn" id="updatebtn">
             </div>
+            <div class="addstudents-items" id="message">
+               <span id="insert-message"></span>
+            </div>
+
 </div>
     </section>
 
@@ -64,146 +81,6 @@
                 </tr>
             </thead>
             <tbody id="studentsTableBody">
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="sachin.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="sachindra.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="hemraj.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
-                <tr>
-                    <td>22061021343</td>
-                    <td>Rakesk Man shakya Maharjan</td>
-                    <td  id="table-image"><img src="suhel.png" alt=""></td>
-                    <td>maharjansohail222@gmail.com</td>
-                    <td>2080-12-30</td>
-                </tr>
             </tbody>
         </table>
     </section>
@@ -228,7 +105,7 @@
         document.getElementById("studentCourse").value = "";
     }
 </script> -->
-    <script src="../Addstudents/addstudents.js"></script>
+    <script src="../addstudents/addstudents.js"></script>
 </body>
 
 </html>

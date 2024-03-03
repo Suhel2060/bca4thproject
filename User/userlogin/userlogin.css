@@ -63,7 +63,7 @@
   .password-toggle i{
     position: absolute;
     top: 23px;
-    left: 368px;
+    right: 20px;
   }
   .password-toggle #show{
     z-index: 5;

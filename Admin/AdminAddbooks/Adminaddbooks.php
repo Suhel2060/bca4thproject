@@ -5,31 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php include('../AdminHeader/AdminNavcss.php'); ?>
+    <?php include('../adminheader/adminnavcss.php'); ?>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Adminaddbook.css">
+    <link rel="stylesheet" href="adminaddbook.css">
+    <script src="../adminaddbooks/adminaddbooks.js"></script>
 </head>
 
 <body>
-    <?php include('../AdminHeader/AdminNav.php'); ?>
+    <?php include('../adminheader/adminnav.php'); ?>
     <div class="Add-book-container">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="" enctype="multipart/form-data">
             <div class="Add-book-formitems">
-                <label for="BookId">Book Id:</label>
-                <input type="text" id="BookId" name=""  class="form-inputs">
+                <label for="ISBN">ISBN:</label>
+                <input type="text" id="ISBN" name=""  class="form-inputs">
             </div>
             <div class="Add-book-formitems">
                 <label for="BookName">Book Name:</label>
-                <input type="text" id="BookName" name="" class="form-inputs" pattern="[A-z]">
+                <input type="text" id="BookName" name="" class="form-inputs">
             </div>
             <div class="Add-book-formitems">
                 <label for="AuthorName">Author's Name:</label>
                 <input type="text" id="AuthorName" name="" class="form-inputs">
             </div>
             <div class="Add-book-formitems">
-                <label for="PublicationName">Publication Name:</label>
-                <input type="text" id="PublicationName" name="" class="form-inputs">
+                <label for="Tags">Tags:</label>
+                <input type="text" id="Tags" name="" class="form-inputs">
             </div>
             <div class="Add-book-formitems">
                 <label for="Catagories">Catagories:</label><br>
@@ -56,12 +57,12 @@
                 <label for="Quantity">Quantity:</label>
                 <input type="number" id="Quantity" name="" class="form-inputs" >
             </div>
-
-            <div class="Add-book-formitems" id="form-btn">
-                <input type="submit" value="Add" class="btn" >
+        </form>
+        <div class="message"></div>
+        <div class="Add-book-formitems" id="form-btn">
+                <input type="submit" value="Add" class="btn" onclick="insertbook()">
                 <input type="button" value="Update" class="btn">
             </div>
-        </form>
     </div>
 </body>
 

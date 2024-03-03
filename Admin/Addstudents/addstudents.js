@@ -1,3 +1,28 @@
+window.addEventListener("load",()=>{
+    fetch("../../phpfile/studentdetails.php")
+    .then(response => response.json())
+    .then((data) => {
+        console.log(data);
+
+        for(let i=0;i<data.length;i++){
+            let studentdata=`<tr>
+            <td>${data[i].username}</td>
+            <td>${data[i].studentname}</td>
+            <td  id="table-image"><img src="${data[i].image}" alt=""></td>
+            <td>${data[i].email}</td>
+            <td>2080-12-30</td>
+            <td><button>edit<button><button>delete<button></td>
+            
+        </tr>`;
+            document.querySelector("#studentsTableBody").insertAdjacentHTML("beforeend",studentdata)
+
+        }
+    })
+});
+
+
+
+
 let addbtn=document.querySelector("#Addbtn");
 addbtn.addEventListener("click",()=>{
 
@@ -11,7 +36,6 @@ addbtn.addEventListener("click",()=>{
     //formdata creating and storing data from addstudents
     const formdata=new FormData();
     console.log(image.files);
-    console.log(image.files[0].type);
     formdata.append("img",image.files[0]);
     formdata.append("username",username);
     formdata.append("password",password);
@@ -55,8 +79,39 @@ fetch("../../phpfile/imagehandle.php",{
     body:formdata,
 })
 .then((response)=>response.json())
-.then((imagedata)=>{
-    console.log(imagedata)
+.then((insertdata)=>{
+    console.log(insertdata);
+    if(insertdata.status){
+        let table=document.querySelector("#studentsTableBody");
+        let table_data=` <tr>
+        <td>${insertdata.username}</td>
+        <td>${insertdata.studentname}</td>
+        <td  id="table-image"><img src="${insertdata.image}" alt=""></td>
+        <td>${insertdata.email}</td>
+        <td>${insertdata.date}</td>
+    </tr>`;
+    table=+table.insertAdjacentHTML("beforeend",table_data);
+    let message=document.querySelector('#insert-message');
+    message.innerHTML="Data insert successful";
+    message.style.display="block";
+    message.style.color="blue";
+    setTimeout(() => {
+        message.style.display="none";
+    }, 3000);
+    let a=document.querySelectorAll("#studentID","#password","#studentName","#studentEmail","#phoneNumber","#Image");
+    a.forEach((data) =>{
+        data.value=" "
+    })
+
+    }else{
+        let message=document.querySelector('#insert-message');
+        message.innerHTML="Data insert unsuccessful";
+        message.style.display="block";
+        message.style.color="red";
+        setTimeout(() => {
+            message.style.display="none";
+        }, 3000);
+    }
 })
 }
 );

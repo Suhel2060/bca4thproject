@@ -46,6 +46,13 @@ input {
     font-family: Poppins;
     text-align: center;
 }
+#message{
+    text-align: center;
+}
+#insert-message{
+    display: none;
+    color: white;
+}
 
 /* 
 button {

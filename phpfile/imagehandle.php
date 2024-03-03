@@ -27,11 +27,11 @@ if (isset($_FILES['img'])) {
 //image store in a file
 function imagestore()
 {
-    $uploaddir = '../Admin/Addstudents/studentimg/';
+    $uploaddir = '../admin/addstudents/studentimg/';
     $uploadfile = $uploaddir . basename($_FILES['img']['name']);
     if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
         global $imageurl;
-        $imageurl = $uploadfile;
+        $imageurl = '../addstudents/studentimg/' . basename($_FILES['img']['name']);
         return true;
     } else {
         echo json_encode(["error" => false]);
@@ -45,7 +45,7 @@ function studentDataStore()
     global $username, $password, $email, $studentname, $phonenumber, $imageurl;
     require("dbconnect.php");
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
     $email = $_POST['email'];
     $studentname = $_POST['studentname'];
     $phonenumber = $_POST['phonenumber'];

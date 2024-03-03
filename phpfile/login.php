@@ -6,10 +6,10 @@ header('Access-Control-Allow-Headers: *');
 header('Content-Type: application/json; charset=UTF-8' );
 function authenticate($username1, $password2){
     require("../phpfile/dbconnect.php");
-    $query = "SELECT * FROM userdetails WHERE username='$username1' AND password='$password2'";
+    $query = "SELECT username,`password`,userstatus FROM userdetails WHERE username='$username1'";
     $result = mysqli_query($conn, $query);
     if(   $pulldata=mysqli_fetch_array($result)){
-    if($pulldata["username"]==$username1 && $pulldata["password"]==$password2) {
+    if($pulldata["username"]==$username1 && password_verify($password2,$pulldata["password"])) {
             $status = $pulldata["userstatus"];
             $_SESSION["loginstatus"] = "login";
             $_SESSION["admin_username"] = $username1;
