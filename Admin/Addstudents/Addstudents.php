@@ -33,27 +33,27 @@
     <section id="studentadd-form">
         <h2>Add Student</h2>
         <div id="addStudentForm">
-        <div class="addstudents-items">
+        <div class="addstudents-items addstudent-data">
                 <label for="studentID">Username:</label>
                 <input type="text" id="studentID" name="studentID" required>
             </div>
-        <div class="addstudents-items">
+        <div class="addstudents-items addstudent-data">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="" required>
             </div>
-            <div class="addstudents-items">
+            <div class="addstudents-items addstudent-data">
                 <label for="studentName">Student Name:</label>
                 <input type="text" id="studentName" name="studentName" required>
             </div>
-            <div class="addstudents-items">
+            <div class="addstudents-items addstudent-data">
                 <label for="studentEmail">Email:</label>
                 <input type="email" id="studentEmail" name="studentEmail" required>
             </div>
-            <div class="addstudents-items">
+            <div class="addstudents-items addstudent-data">
                 <label for="phoneNumber">Phone Number</label>
                 <input type="number" id="phoneNumber" name="phoneNumber" required>
             </div>
-            <div class="addstudents-items">
+            <div class="addstudents-items addstudent-data">
                 <label for="Image">Image</label>
                 <input type="file" id="Image" name="Image" required>
             </div>

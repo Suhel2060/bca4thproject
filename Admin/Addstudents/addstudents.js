@@ -89,6 +89,7 @@ fetch("../../phpfile/imagehandle.php",{
         <td  id="table-image"><img src="${insertdata.image}" alt=""></td>
         <td>${insertdata.email}</td>
         <td>${insertdata.date}</td>
+        <td><button>edit<button><button>delete<button></td>
     </tr>`;
     table=+table.insertAdjacentHTML("beforeend",table_data);
     let message=document.querySelector('#insert-message');
@@ -98,9 +99,10 @@ fetch("../../phpfile/imagehandle.php",{
     setTimeout(() => {
         message.style.display="none";
     }, 3000);
-    let a=document.querySelectorAll("#studentID","#password","#studentName","#studentEmail","#phoneNumber","#Image");
+    let a=document.querySelectorAll(".addstudent-data input");
+    // let a=document.querySelectorAll("#studentID","#password","#studentName","#studentEmail","#phoneNumber","#Image");
     a.forEach((data) =>{
-        data.value=" "
+        data.value="";
     })
 
     }else{
