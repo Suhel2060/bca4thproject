@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="adminaddbook.css">
     <script src="../adminaddbooks/adminaddbooks.js"></script>
+    <script src="https://kit.fontawesome.com/6855e15ae1.js" crossorigin="anonymous"></script>
+    <script src="../../admin/adminheader/adminheader.js"></script>
 </head>
 
 <body>

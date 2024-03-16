@@ -57,8 +57,8 @@
 /* show book body */
 .book-details-container{
     border: 3px solid #aed9db38;
-    width: 74vw;
-   height: 95vh;
+    width: 75%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -73,14 +73,22 @@
 }
 
 .book-details{
-    position: relative;
+    /* position: relative;
     border: 2px solid black;
     width: 200px;
     height: 195px;
     margin: 15px 0px 15px 20px;
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 30px; */
     /* transition: transform 0.3s ease-in-out; */
+
+    position: relative;
+    border: 2px solid black;
+    width: 200px;
+    height: 222px;
+    margin: 15px 0px 15px 20px;
+    overflow: hidden;
+    border-radius: 12px;
 }
 /* .book-details:hover{
     transform: scale(1.2);
@@ -112,7 +120,7 @@
 .book-description{
     position: absolute;
     z-index: 10;
-    top: 155px;
+    top: 183px;
     /* padding: 0px 25px; */
     border: 0.5px solid black;
     background-color: rgb(0 0 0 / 49%);

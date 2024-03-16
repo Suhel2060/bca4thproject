@@ -1,3 +1,28 @@
+window.addEventListener("load",()=>{
+  let status=localStorage.getItem("userstatus");
+  let username=localStorage.getItem("User-name");
+  if(status=="user"){
+    document.querySelector(".login-container").style.display="none";
+    document.querySelector(".login-user").style.display="block";
+    document.querySelector("#user-name").innerHTML=username;
+    document.querySelector("#login").style.display="none";
+    document.querySelector("#login").style.zIndex="1";
+    document.querySelector("#logout").style.display="block";
+    document.querySelector("#logout").style.zIndex="5";
+  }
+  else{
+    document.querySelector("#login").style.display="block";
+    document.querySelector("#login").style.zIndex="5";
+    document.querySelector("#logout").style.display="none";
+    document.querySelector("#logout").style.zIndex="1";
+    document.querySelector(".login-user").style.display="none";
+  }
+  
+
+})
+
+
+
 //login using fetch
 document.querySelector("#form-loginbtn").addEventListener("click",async(e)=>{
   e.preventDefault();
@@ -65,13 +90,28 @@ document.querySelector("#password").value="";
 }
 
 function logout(){
-  document.querySelector("#login").style.display="block";
-  document.querySelector("#login").style.zIndex="5";
-  document.querySelector("#logout").style.display="none";
-  document.querySelector("#logout").style.zIndex="1";
-  document.querySelector(".login-user").style.display="none";
-  localStorage.removeItem("userstatus")
-  localStorage.removeItem("User-name");
+  let logout={
+   "logout":"true"
+  }
+  fetch("../phpfile/logout.php",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json; Charset=UTF-8",
+    },
+    body:JSON.stringify(logout),
+  }).then(response => response.json())
+  .then((data)=>{
+    if(data.logout_status){
+      document.querySelector("#login").style.display="block";
+      document.querySelector("#login").style.zIndex="5";
+      document.querySelector("#logout").style.display="none";
+      document.querySelector("#logout").style.zIndex="1";
+      document.querySelector(".login-user").style.display="none";
+      localStorage.removeItem("userstatus");
+      localStorage.removeItem("User-name");
+    }
+  })
+
 
 }
 

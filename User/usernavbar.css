@@ -30,7 +30,7 @@ header,aside,section{
 header{
     position: fixed;
     width: 100%;
-    height: 4vw;
+    height: 9vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,13 +62,14 @@ header{
 }
 .searchfield{
     margin: 0px 30px;
+    width: 25vw;
 }
 .searchbar{
     position: relative;
 }
 .user-search-book i{
     position: absolute;
-    right: 14px;
+    right: 0px;
     top: 5px;
     font-size: 20px;
 }
@@ -140,6 +141,7 @@ aside{
     z-index: 2;
     background-color: aquamarine;
     display: none;
+    border-collapse: collapse;
 }
 
 .showhidenavbar{
@@ -154,6 +156,7 @@ aside{
     justify-content: center;
     align-items: center;
     margin: 0px 0px;
+    border-left: none;
 }
 .menu i{
     font-size: 30px;

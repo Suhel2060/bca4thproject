@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Adminshowbook.css">
     <script src="https://kit.fontawesome.com/6855e15ae1.js" crossorigin="anonymous"></script>
-    <script src="../Adminshowbooks/adminshowbook.js"></script>
+    <script src="../adminshowbooks/adminshowbook.js"></script>
+    <script src="../../admin/adminheader/adminheader.js"></script>
 
 </head>
 
@@ -22,7 +23,7 @@
 
     <div class="showbook-main-container">
         <div class="book-details-container">
-            <div class="book-details" onmousemove="showdetails(event)" onmouseout="hidedetails()">
+            <!-- <div class="book-details" onmousemove="showdetails(event)" onmouseout="hidedetails()">
                 <img src="harrypotter.png" alt="error">
                 <div class="icon">
                     <i class="fa-solid fa-plus"></i>
@@ -47,7 +48,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -57,7 +58,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -67,7 +68,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -78,7 +79,7 @@
                 <div class="book-description">
 
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -89,7 +90,7 @@
                 <div class="book-description">
 
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -100,7 +101,7 @@
                 <div class="book-description">
 
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -110,7 +111,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -120,7 +121,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -130,7 +131,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -140,7 +141,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -150,7 +151,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -160,7 +161,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -170,7 +171,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details">
@@ -180,7 +181,7 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
             </div>
             <div class="book-details" onmousemove="showdetails(event)" onmouseout="hidedetails()">
@@ -190,9 +191,9 @@
                 </div>
                 <div class="book-description">
                     <h3>Book Name</h3>
-                    
+
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="search">
             <input type="text" class="search_input" placeholder="search books">

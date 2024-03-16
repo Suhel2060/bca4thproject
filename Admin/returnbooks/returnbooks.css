@@ -1,0 +1,58 @@
+.addstudent-container{
+    display: flex;
+}
+section {
+    /* position: relative; */
+    margin: 25px 30px;
+    background-color: white;
+    padding: 6px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2{
+    margin: 15px 19px;
+    text-align: center;
+    
+}
+#studentsList {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: skyblue;
+    color: white;
+}
+tbody{
+    margin: 30px 0px 0px 0px;
+}
+#studentsList{
+    /* position: absolute;
+    right: 30px;
+width: 58vw; */
+width:100%;
+overflow-y: scroll;
+height: 100%;
+
+}
+
+#table-image{
+ width: 18%;
+}
+
+#table-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

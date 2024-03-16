@@ -60,6 +60,7 @@ function studentDataStore()
         if (mysqli_query($conn, $query1)) {
             return true;
         }else{
+            unlink("../admin/addstudents/studentimg/". basename($_FILES['img']['name']));
             echo json_encode(["error"=> false]);
         }
     } else {
