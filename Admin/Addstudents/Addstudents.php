@@ -1,13 +1,13 @@
 <?php
-// session_start();
-// if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["adminusername"])&&isset($_SESSION["userstatus"]))){
-// header("Location:../../user/usernavbar.php");
-// }
-// else{
-//     if($_SESSION["userstatus"]=="user"){
-//         header("Location:../../../user/usernavbar.php");
-//     }
-// }
+session_start();
+if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
+header("Location:../../user/usernavbar.php");
+}
+else{
+    if($_SESSION["user_status"]=="user"){
+        header("Location:../../user/usernavbar.php");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,49 +28,97 @@
 </head>
 
 <body>
-    <?php include('../adminHeader/adminNav.php'); ?>
+    <?php require('../adminheader/adminnav.php'); ?>
     <div class="addstudent-container">
-    <section id="studentadd-form">
-        <h2>Add Student</h2>
-        <div id="addStudentForm">
-        <div class="addstudents-items addstudent-data">
-                <label for="studentID">Username:</label>
-                <input type="text" id="studentID" name="studentID" required>
-            </div>
-        <div class="addstudents-items addstudent-data">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="" required>
-            </div>
-            <div class="addstudents-items addstudent-data">
-                <label for="studentName">Student Name:</label>
-                <input type="text" id="studentName" name="studentName" required>
-            </div>
-            <div class="addstudents-items addstudent-data">
-                <label for="studentEmail">Email:</label>
-                <input type="email" id="studentEmail" name="studentEmail" required>
-            </div>
-            <div class="addstudents-items addstudent-data">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="number" id="phoneNumber" name="phoneNumber" required>
-            </div>
-            <div class="addstudents-items addstudent-data">
-                <label for="Image">Image</label>
-                <input type="file" id="Image" name="Image" required>
-            </div>
-            <div class="addstudents-items" id="Add-btn">
-            <input type="button" value="Addstudent" class="Addstudent-btn" id="Addbtn">
-            <input type="button" value="UpdateStudent" class="Addstudent-btn" id="updatebtn">
-            </div>
-            <div class="addstudents-items" id="message">
-               <span id="insert-message"></span>
-            </div>
+        <div class="formcontainer">
+            <form id="studentadd-form" >
+                <h2>Add Student</h2>
 
-</div>
-    </section>
+
+                <div id="addStudentForm">
+                    <div class="addstudents-items addstudent-data">
+                        <label for="studentID">Username:</label>
+                        <input type="text" id="studentID" name="studentID" required onkeyup="checkdataentry(this)" minlength="5">
+                    </div>
+                    <div class="addstudents-items addstudent-data">
+                        <label for="password">Password:</label>
+                        <input type="text" id="password" name="" required onkeyup="checkdataentry(this)" minlength="8">
+                    </div>
+                    <div class="addstudents-items addstudent-data">
+                        <label for="studentName">Student Name:</label>
+                        <input type="text" id="studentName" name="studentName" required onkeyup="checkdataentry(this)" minlength="3">
+                    </div>
+                    <div class="addstudents-items addstudent-data">
+                        <label for="studentEmail">Email:</label>
+                        <input type="email" id="studentEmail" name="studentEmail" required onkeyup="checkdataentry(this)">
+                    </div>
+                    <div class="addstudents-items addstudent-data">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required onkeyup="checkdataentry(this)" pattern="[9][5-8][0-9]{8}" maxlength="10">
+                    </div>
+                    <div class="addstudents-items addstudent-data">
+                        <label for="Image">Image</label>
+                        <input type="file" id="Image" name="Image" required>
+                    </div>
+                    <div class="addstudents-items" id="Add-btn">
+                        <input type="submit" value="Addstudent" class="Addstudent-btn" id="Addbtn">
+                    </div>
+                    <div class="addstudents-items" id="message">
+                        <span id="insert-message"></span>
+                    </div>
+                </div>
+            </form>
+            <form id="updateStudentForm">
+                <h2>update Student</h2>
+
+
+                <div id="addStudentForm">
+                    <div class="addstudents-items updatestudent-data">
+                        <label for="studentID">Username:</label>
+                        <input type="text" id="updatestudentID" name="studentID" required onkeyup="checkdataentry(this)">
+                    </div>
+                    <div class="addstudents-items updatestudent-data">
+                        <label for="studentName">Student Name:</label>
+                        <input type="text" id="updatestudentName" name="studentName" required onkeyup="checkdataentry(this)">
+                    </div>
+                    <div class="addstudents-items updatestudent-data">
+                        <label for="studentEmail">Email:</label>
+                        <input type="email" id="updatestudentEmail" name="studentEmail" required onkeyup="checkdataentry(this)">
+                    </div>
+                    <div class="addstudents-items updatestudent-data">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="number" id="updatephoneNumber" name="phoneNumber" required onkeyup="checkdataentry(this)">
+                    </div>
+                    <div class="addstudents-items updatestudent-data">
+                        <label for="Image">Image</label>
+                        <input type="file" id="updateImage" name="Image" required>
+                    </div>
+                    <div class="addstudents-items" id="update-btn">
+                        <input type="button" value="UpdateStudent" class="updatestudent-btn" id="updatebtn">
+                        <input type="button" value="Cancel" class="Addstudent-btn" id="cancelbtn">
+                    </div>
+                    <div class="addstudents-items" id="message">
+                        <span id="insert-message"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <section id="studentsList">
 
         <h2>Student List</h2>
+        <div class="search">
+            <input type="text" class="search_input" placeholder="search users" onkeyup="searchdata(event)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <li class="searchlist" style="display: none;background-color: #b0b0df;"></li>
+            <!-- <ol class="searchdatalist" type="none">
+                
+            </ol> -->
+
+
+        </div>
         <table>
             <thead>
                 <tr>
@@ -82,6 +130,7 @@
                 </tr>
             </thead>
             <tbody id="studentsTableBody">
+
             </tbody>
         </table>
     </section>

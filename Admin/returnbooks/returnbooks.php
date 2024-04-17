@@ -1,13 +1,13 @@
 <?php
-// session_start();
-// if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["adminusername"])&&isset($_SESSION["userstatus"]))){
-// header("Location:../../user/usernavbar.php");
-// }
-// else{
-//     if($_SESSION["userstatus"]=="user"){
-//         header("Location:../../../user/usernavbar.php");
-//     }
-// }
+session_start();
+if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
+header("Location:../../user/usernavbar.php");
+}
+else{
+    if($_SESSION["user_status"]=="user"){
+        header("Location:../../user/usernavbar.php");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +37,9 @@
             <thead>
                 <tr>
                     <th>Username</th>
-                    <th>Student Name</th>
+                    <th>Book ID</th>
                     <th>Bookname</th>
+                    <th>Book Status</th>
                     <th>Issued books</th>
                     <th>Return Date</th>
                 </tr>

@@ -25,6 +25,9 @@ header,aside,section{
     display: flex;
     flex-direction: row;
     width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 85px;
 
 }
 header{
@@ -36,10 +39,13 @@ header{
     align-items: center;
     /* background: rgba(139, 18, 139, 0.616); */
     background-color:#F8F9FA;
+    z-index: 2;
 }
 .icon{
+    position: relative;
     margin-left:30px ;
     font-size: 20px;
+    width: 20px;
 }
 .logo{
     font-family: 'Font Awesome 6 Free';
@@ -50,8 +56,18 @@ header{
     border: 2px solid black;
 }
  #cross{
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
 }
+#list{
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+
+}
+
 .user-search-book {
     width: 40vw;
     height: 4vh;
@@ -137,15 +153,15 @@ aside{
     top: 4.5rem;
     margin-left: 4px;
     padding: 25px 0px;
-    transition: width 300ms linear;
+    transition: opacity 0.2s ease-in;
     z-index: 2;
     background-color: aquamarine;
-    display: none;
+    opacity: 0;
     border-collapse: collapse;
 }
 
 .showhidenavbar{
-    display: block;
+   opacity: 1;
 }
 .menu{
     position: relative;
@@ -165,13 +181,12 @@ aside{
 }
 section{
     width: 99%;
-    position: absolute;
+    position: relative;
     right: 0px;
     /* top: 20vh; */
     height: 100%;
-    top: 4.5rem;
     margin: 1px auto;
-    z-index: -1;
+    z-index: 1;
 
 }
 
@@ -242,7 +257,7 @@ section{
     display: none;
 }
 .book-slider{
-    width: 210px;
+    width: 213px;
     height: 221px;
     border: 2px solid black;
     scroll-behavior: smooth;

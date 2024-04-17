@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
+header("Location:../../user/usernavbar.php");
+}
+else{
+    if($_SESSION["user_status"]=="user"){
+        header("Location:../../user/usernavbar.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +21,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Adminshowbook.css">
     <script src="https://kit.fontawesome.com/6855e15ae1.js" crossorigin="anonymous"></script>
-    <script src="../adminshowbooks/adminshowbook.js"></script>
-    <script src="../../admin/adminheader/adminheader.js"></script>
+    <script src="../adminshowbooks/adminshowbook.js<?php filemtime('../adminshowbooks/adminshowbook.js')?>"></script>
+    <script src="../../admin/adminheader/adminheader.js<?php filemtime('../../admin/adminheader/adminheader.js')?>"></script>
 
 </head>
 
-<body>
+<body style="width:100%;">
     <?php
     include('../adminheader/adminnav.php');
     ?>
@@ -196,32 +207,20 @@
             </div> -->
         </div>
         <div class="search">
-            <input type="text" class="search_input" placeholder="search books">
+            <input type="text" class="search_input" placeholder="search books" onkeyup="searchdata(event)">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <div class="book-search-option">
-                <label for="searchby">Search By:</label>
-                <select name="" id="searchby">
-                    <option value="">Book ID</option>
-                    <option value="" selected>Book Name</option>
-                    <option value="">Author Name</option>
-                    <option value="">Publication</option>
-                </select>
-            </div>
-            <div class="book-search-option">
-                <label for="filter">Filter:</label>
-                <select name="" id="filter">
-                    <option value="">Story</option>
-                    <option value="">Story</option>
-                    <option value="">Story</option>
-                    <option value="">Story</option>
-                    <option value="">Story</option>
-                </select>
-            </div>
+            <ol class="searchdatalist" style="list-style-type:none">
+                
+            </ol>
+
 
         </div>
     </div>
 
+<script>
+    
 
+</script>
 
 </body>
 

@@ -304,12 +304,13 @@
                 icon.classList.toggle('showhidenavbar');
                 console.log(icon.classList.contains('showhidenavbar'));
                 if (icon.classList.contains('showhidenavbar')) {
-                    list.setAttribute('style', "display:none;");
-                    cross.setAttribute('style', "display:block;");
+                    list.style.opacity='0';
+                    cross.style.opacity='1';
                     section.setAttribute('style', "width:99%;margin-left:15px;");
+
                 } else {
-                    list.setAttribute('style', "display:block;");
-                    cross.setAttribute('style', "display:none;");
+                    list.style.opacity='1';
+                    cross.style.opacity='0';
                     // section.setAttribute('style',"width:80%");
                 }
             }, 100);

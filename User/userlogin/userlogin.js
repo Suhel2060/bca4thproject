@@ -77,7 +77,7 @@ document.querySelector("#form-loginbtn").addEventListener("click",async(e)=>{
 });
 
 function userlogin(user_name){
-  document.querySelector(".login-container").style.display="none";
+  document.querySelector(".login-form").style.opacity="1";
   document.querySelector(".login-user").style.display="block";
   document.querySelector("#user-name").innerHTML=user_name;
   document.querySelector("#login").style.display="none";

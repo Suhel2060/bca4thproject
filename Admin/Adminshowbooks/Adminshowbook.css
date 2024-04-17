@@ -22,47 +22,43 @@
 }
 
 .search_input{
-    width: 220px;
+    width: 330px;
     height: 26px;
     border: 2px solid black;
     border-radius: 10px;
     padding: 0px 18px 0px 6px;
+    
 }
 
 .search i{
     z-index: 10;
     position: absolute;
-    left: 230px;
+    right: 0px;
     width: 30px;
     height: 30px;
     top: 6px;
 }
-.book-search-option{
-    margin-top: 13px;
-    font-size: 13px;   
+.searchdatalist{
+    background-color: wheat;
+    width: 100%;
+    height: 100%;
+    display: none;
+    display: block;
+    position: relative;
+    z-index: 20;
 }
-
-.book-search-option label{
-    display: inline-block;
-    font-size: 16px;
-    width: 85px;
-    font-family: Poppins;
+.searchdatalist li{
+    margin-bottom: 4px;
 }
-.book-search-option select{
-    width: 136px;
-    height: 30px;
-    border-radius: 10px;
-}
-
 /* show book body */
 .book-details-container{
     border: 3px solid #aed9db38;
-    width: 75%;
-    height: 100%;
+    /* width: 90%; */
+    max-height: 93vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 45px 45px;
+    margin: 70px 161px;
     border-radius: 25px;
     background-color: #aed9db38;
     box-shadow:5px 8px 10px 4px #aed9db87;
@@ -153,9 +149,13 @@
     position: absolute;
     z-index: 10;
     /* transition: all 0.1s ease-in-out; */
+    font-size: 15px
 
 }
 
+.hover-container p{
+    font-size: 15px
+}
 .image{
     width: 126px;
     height: 166px;

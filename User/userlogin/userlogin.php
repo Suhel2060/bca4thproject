@@ -1,5 +1,6 @@
 
-  <div class="login-container">
+  <div class="container"><
+  <div class="login-container" id="login-form">
     <h1>Login</h1>
     <form action="../phpfile/login.php" method="post" target="_self">
       <input type="text" name="username" id="username" placeholder="Username" required>
@@ -20,4 +21,10 @@
     </div>
     <i class="fa-solid fa-xmark" id="login-cross" onclick="loginRetrieve()"></i>
   </div>
+
+  <div class="login-container" id=forgot-password>
+
+    <i class="fa-solid fa-xmark" id="login-cross" onclick="loginRetrieve()"></i>
+  </div>
+</div>
 

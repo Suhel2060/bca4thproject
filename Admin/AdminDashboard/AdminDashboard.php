@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
+header("Location:../../user/usernavbar.php");
+}
+else{
+    if($_SESSION["user_status"]=="user"){
+        header("Location:../../user/usernavbar.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap"
         rel="stylesheet">
         <script src="https://kit.fontawesome.com/6855e15ae1.js" crossorigin="anonymous"></script>
-        <script src="../../admin/adminheader/adminheader.js"></script>
+        <script src="../../admin/adminheader/adminheader.js<?php filemtime('../../admin/adminheader/adminheader.js')?>"></script>
+        <script src="../admindashboard/dashboard.js"></script>
 
 </head>
 

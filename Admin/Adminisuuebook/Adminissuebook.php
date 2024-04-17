@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
+header("Location:../../user/usernavbar.php");
+}
+else{
+    if($_SESSION["user_status"]=="user"){
+        header("Location:../../user/usernavbar.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,19 +28,24 @@
 <body>
     <?php include('../adminheader/adminnav.php'); ?>
     <div class="issue-book-container">
-        <form action="" method="" enctype="multipart/form-data">
+        <form onsubmit="issuebook(event)">
             <div class="issue-book-formitems">
-                <label for="Username">Username:</label>
-                <input type="text" id="Username" name=""  class="form-inputs">
+                <label for="Username" >Username:</label>
+                <input type="text" id="Username" name=""  class="form-inputs" onblur="userimage()">
+            </div>
+            <div class="issue-book-formitems" id="studentimg">
+                <img src="" alt="">
             </div>
             <div class="issue-book-formitems">
                 <label for="BookName">Book Name:</label>
-                <input type="text" id="BookName" name="" class="form-inputs">
+                <input type="text" id="BookName" name="" class="form-inputs" onkeyup="bookdata_search()">
             </div>
             <div class="issue-book-formitems">
-                <label for="Studentname">Student Name:</label>
-                <input type="text" id="Studentname" name="" class="form-inputs">
+                <label for="Studentname">Book id:</label>
+                <input type="text" id="bookid" name="" class="form-inputs" onkeyup="bookdata_search()" onblur="hidesearch()">
+                <div class="list"></div>
             </div>
+
 
             <!-- <div class="issue-book-formitems">
                 <label for="Catagories">Catagories:</label><br>
@@ -56,12 +72,13 @@
                 <label for="Quantity">Quantity:</label>
                 <input type="number" id="Quantity" name="" class="form-inputs" >
             </div> -->
-        </form>
-        <div class="message"></div>
-        <div class="issue-book-formitems" id="form-btn">
-                <input type="submit" value="Add" class="btn" onclick="issuebook()">
+            <div class="issue-book-formitems" id="form-btn">
+                <input type="submit" value="Add" class="btn">
                 <!-- <input type="button" value="Update" class="btn"> -->
             </div>
+        </form>
+        <div class="message"></div>
+
     </div>
 </body>
 

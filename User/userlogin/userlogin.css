@@ -12,8 +12,17 @@
   border: 1px solid #ccc;
   border-top: 3px solid #4d94ff;
   height: 375px;/* 3D effect */
-  display: none;
+
   }
+#login-form{
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+#forgot-password{
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
   .login-container h1 {
     text-align: center;
     color: #333;
@@ -66,10 +75,10 @@
     right: 20px;
   }
   .password-toggle #show{
-    z-index: 5;
+    z-index: -1;
   }
   .password-toggle #hide{
-    z-index: -1;
+    z-index: 5;
   }
   .login-container #login-cross{
     position: absolute;

@@ -1,20 +1,35 @@
 body {
   font-family: Poppins;
+
 }
 
 #Addbooks {
   text-decoration: underline;
 }
 
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+
 .Add-book-container {
-  border: 10px solid #f6faff;
-  width: 460px;
+  /* border: 10px solid #f6faff;
+  width: 460px; */
   /* height: 700px; */
-  margin: 30px auto;
+  /* margin: 30px auto;
   font-size: 20px;
   background-color: #f6faff;
-  padding: 10px 45px;
+  padding: 10px 45px; */
   /* overflow-y: scroll; */
+  margin: 25px 30px;
+  width: 28%;
+  height: 100%;
+  background-color: white;
+  padding: 6px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 22px 15px;
 }
 .Add-book-formitems {
   margin: 20px 20px;
@@ -77,4 +92,63 @@ textarea {
 .failed{
     color: red;
     display: block;
+}
+
+
+/* table  */
+.table-container{
+
+  width: 65%;
+  overflow-y: scroll;
+  margin-left: 21px;
+  max-height: 48rem;
+  margin-top: 26px;
+  text-align: center;
+}
+table {
+
+  /* position: absolute; */
+
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  max-height: 100%;
+
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: skyblue;
+  color: white;
+}
+tbody{
+  margin: 30px 0px 0px 0px;
+}
+
+td button{
+  padding: 4px;
+  border-radius: 8px;
+  color: white;
+  border: 0px;
+  font-size: 15px;
+  margin-right: 6px;
+}
+td button:nth-child(1){
+  background-color: #0B5ED7;
+  margin-bottom: 10px;
+  width: 50px;
+
+}
+#removebtn{
+  background-color: #BB2D3B;
+  width: 50px;
+
+}
+.btn-td{
+  width: 50px;
 }

@@ -2,21 +2,57 @@
 .addstudent-container{
     display: flex;
 }
-section {
-    position: relative;
+form {
     margin: 25px 30px;
     background-color: white;
     padding: 6px 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-#studentadd-form{
+.formcontainer{
     max-width: 500px;
+    position: relative;
+}
+#studentadd-form{
+    position: absolute;
+    max-width: 500px;
+    display: block;
+    
+}
+#updateStudentForm{
+position: absolute;
+display: none;
 }
 h2{
     margin: 15px 19px;
     text-align: center;
     
+}
+/* search bar */
+.search{
+    position: absolute;
+    right: 22px;
+    margin: 30px 10px;
+    top: -11px;
+}
+
+.search_input{
+    width: 330px;
+    height: 26px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px 18px 0px 6px;
+    margin: 0px;
+    
+}
+
+.search i{
+    z-index: 10;
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    top: 6px;
 }
 
 label {
@@ -35,6 +71,10 @@ input {
 #Add-btn{
     text-align: center;
 }
+/* .addstudent-data input{
+    border: 2px solid black;
+    color: black;
+} */
 .Addstudent-btn{
     margin: 17px 20px;
     display: inline-block;
@@ -77,6 +117,9 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
 }
+table:nth-child(even){
+    background-color: rgb(77, 54, 54);
+}
 
 th, td {
     border: 1px solid #ddd;
@@ -94,9 +137,9 @@ tbody{
 #studentsList{
     position: absolute;
     right: 30px;
-width: 58vw;
+width: 65vw;
 overflow-y: scroll;
-max-height: 94vh;
+max-height: 100%;
 
 }
 
@@ -108,4 +151,24 @@ max-height: 94vh;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+td button{
+    padding: 4px;
+    border-radius: 8px;
+    color: white;
+    border: 0px;
+    font-size: 15px;
+    margin-right: 6px;
+}
+td button:nth-child(1){
+    background-color: #0B5ED7;
+    margin-bottom: 10px;
+    width: 50px;
+
+}
+#removebtn{
+    background-color: #BB2D3B;
+    width: 50px;
+
 }
