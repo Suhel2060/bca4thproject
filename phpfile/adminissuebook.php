@@ -18,7 +18,7 @@ function issuebook($userID, $bookid,$bookname)
 {
     global $currentquantity;
     require("dbconnect.php");
-    $query = "Select username from issuebooks natural join bookdetails where username='$userID' and bookname='$bookname' and book_issue_status='issued'";
+    $query = "Select username from issuebooks natural join individual_book natural join bookdetails where username='$userID' and bookname='$bookname' and book_issue_status='issued'";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) == 0) {
         $query1 = "select count(*) as noofbookstaken from issuebooks where book_issue_status='issued' group by username having username='$userID'";

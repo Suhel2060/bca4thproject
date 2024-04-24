@@ -1,12 +1,10 @@
 <?php
 session_start();
 if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
-header("Location:../../user/usernavbar.php");
-}
+    header("Location:../../user/userdashboard/userdashboard.php");}
 else{
     if($_SESSION["user_status"]=="user"){
-        header("Location:../../user/usernavbar.php");
-    }
+        header("Location:../../user/userdashboard/userdashboard.php");    }
 }
 ?>
 <!DOCTYPE html>
@@ -29,6 +27,7 @@ else{
     <?php include('../adminheader/adminnav.php'); ?>
     <div class="issue-book-container">
         <form onsubmit="issuebook(event)">
+        <input type="hidden" value='' id='book'>
             <div class="issue-book-formitems">
                 <label for="Username" >Username:</label>
                 <input type="text" id="Username" name=""  class="form-inputs" onblur="userimage()">

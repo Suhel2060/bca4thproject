@@ -29,6 +29,16 @@ function insertbook(e){
         if(data.status=="success"){
             document.querySelector(".message").innerHTML="Data insert successful"
             document.querySelector(".message").classList.add("success");
+            let bookdata = `<tr>
+            <td>${data.bookid[0].book_id}</td>
+            <td>${data.bookname}</td>
+            <td>${data.isbn}</td>
+            <td>${data.authorname}</td>
+
+            <td class="btn-td"><button onclick="edituser(this)">edit</button></td><td class="btn-td"><button onclick="removedata(this)" id="removebtn">delete</button></td>
+            
+        </tr>`;
+                document.querySelector("tbody").insertAdjacentHTML("beforeend", bookdata)
         //     let bookdata = `<tr>
         //     <td>${}</td>
         //     <td>${data[i].bookname}</td>
@@ -42,6 +52,9 @@ function insertbook(e){
 
 
         }
+        else if(data.bookexists==true){
+            
+        }
     })
 }else{
     const form_data=new FormData();
@@ -54,11 +67,13 @@ function insertbook(e){
     let quantity=document.querySelector('#Quantity').value;
     // let tag=tag_data.split(",");
     let image=document.querySelector('#image');
-    if(image.files.length==0||imageforupdate=="../addstudents/bookimg/"+image.files[0].name){
+    if(image.files.length==0||imageforupdate==image.files[0].name){
         console.log("empty")
-        dat.append("imagedata","../addstudents/bookimg/"+image.files[0].name);
+        form_data.append("imagedata","false");
     }else{
-        dat.append("image",document.querySelector('#updateImage').files[0]);
+
+        form_data.append("imagedata","true");
+        form_data.append("image",document.querySelector('#updateImage').files[0]);
     
     }
 
@@ -69,15 +84,20 @@ function insertbook(e){
     form_data.append("tags",tag_data);
     form_data.append("description",description);
     form_data.append("quantity",quantity);
-    fetch("../../phpfile/adminaddbooks.php",{
+    fetch("../../phpfile/adminupdatebooks.php",{
         method:"POST",
         body: form_data,
     })
     .then((response) => response.json())
     .then((data)=>{
-
-
         console.log(data)
+        if(data.success){
+            edittablerow.children[1].innerHTML=bookname;
+            edittablerow.children[2].innerHTML=ISBN;
+            edittablerow.children[3].innerHTML=authorname;
+
+
+        }
     })}
 
 }
@@ -110,7 +130,10 @@ window.addEventListener("load", () => {
 
 //update the book
 // let usernameforupdate,imageforupdate;
+
+let edittablerow//to get the row in which data to be edited
 function edituser(t){
+    edittablerow=t.parentElement.parentElement;
     let bookid=t.parentElement.parentElement.children[0].innerHTML;
     let formdata=new FormData();
     formdata.append("bookid",bookid);

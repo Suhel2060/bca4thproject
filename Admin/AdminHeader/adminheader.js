@@ -5,7 +5,7 @@ window.addEventListener("load",()=>{
   console.log(  localStorage.getItem("userstatus"));
     console.log(localStorage.getItem("User-name"));
     if(user_name==null||userstatus==null){
-        window.location.href="../../user/usernavbar.php";
+        window.location.href="../../user/userdashboard/userdashboard.php";
     }
   })
 
@@ -31,10 +31,9 @@ window.addEventListener("load",()=>{
             //   setTimeout(preventback,0);
             // }
             // preventback();
-            window.location.href="../../user/usernavbar.php";
+            window.location.href="../../user/userdashboard/userdashboard.php";
             }
         })
-        window.onun
 
       
       }

@@ -11,21 +11,32 @@ $phonenumber = $_POST['phonenumber'];
 $name = $_POST['name'];
 if ($_POST['imagedata'] == "true") {
     $uploaddir = '../admin/addstudents/studentimg/';
-    $uploadfile = $uploaddir . basename($_FILES['image']['name']);
+    $imageurl1 = uniqid() . basename($_FILES['image']['name']);
+    $uploadfile = $uploaddir . $imageurl1;
     if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-        $imageurl = '../addstudents/studentimg/' . basename($_FILES['image']['name']);
-        $query = "update userdetails set username='$updateusername',studentname='$name', email='$email', phonenumber='$phonenumber', image='$imageurl' where username='$username'";
-        if (mysqli_query($conn, $query)) {
-            echo json_encode(["success" => true]);
-        } else {
-            echo json_encode(["success image" => false]);
-        }
+        $query="select image from userdetails where username='$username'";
+        $result=mysqli_query($conn,$query);
+        $image=mysqli_fetch_assoc($result);
+        $imageurl='../admin/addstudents/studentimg/'.$image['image'];
+        unlink($imageurl);
+        $imageurl = $imageurl1;
+            $query = "update userdetails set username='$updateusername',studentname='$name', email='$email', phonenumber='$phonenumber', image='$imageurl' where username='$username'";
+            if (mysqli_query($conn, $query)) {
+                    echo json_encode(["success" => true]);
+            } else {
+                echo json_encode(["success" => false]);
+            }
+    }
+    else {
+        echo json_encode(["success image" => false]);
     }
 } else {
-    $query = "update userdetails set username='$updateusername', studentname='$name', email='$email', phonenumber='$phonenumber' where username='$username'";
-    if (mysqli_query($conn, $query)) {
-        echo json_encode(["success" => true]);
-    } else {
-        echo json_encode(["username" => $updateusername,"email" => $email,"name" => $name,"ph" => $phonenumber]);
+            $query = "update userdetails set username='$updateusername', studentname='$name', email='$email', phonenumber='$phonenumber' where username='$username'";
+            if (mysqli_query($conn, $query)) {
+                    echo json_encode(["success" => true]);
+            } else {
+                echo json_encode(["success" => false]);
+            }
+
     }
-}
+

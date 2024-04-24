@@ -1,12 +1,10 @@
 <?php
 session_start();
 if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
-header("Location:../../user/usernavbar.php");
-}
+    header("Location:../../user/userdashboard/userdashboard.php");}
 else{
     if($_SESSION["user_status"]=="user"){
-        header("Location:../../user/usernavbar.php");
-    }
+        header("Location:../../user/userdashboard/userdashboard.php");    }
 }
 ?>
 
@@ -75,11 +73,11 @@ else{
                 <div id="addStudentForm">
                     <div class="addstudents-items updatestudent-data">
                         <label for="studentID">Username:</label>
-                        <input type="text" id="updatestudentID" name="studentID" required onkeyup="checkdataentry(this)">
+                        <input type="text" id="updatestudentID" name="studentID" required onkeyup="checkdataentry(this)"  minlength="5">
                     </div>
                     <div class="addstudents-items updatestudent-data">
                         <label for="studentName">Student Name:</label>
-                        <input type="text" id="updatestudentName" name="studentName" required onkeyup="checkdataentry(this)">
+                        <input type="text" id="updatestudentName" name="studentName" required onkeyup="checkdataentry(this)" minlength="8">
                     </div>
                     <div class="addstudents-items updatestudent-data">
                         <label for="studentEmail">Email:</label>
@@ -87,14 +85,14 @@ else{
                     </div>
                     <div class="addstudents-items updatestudent-data">
                         <label for="phoneNumber">Phone Number</label>
-                        <input type="number" id="updatephoneNumber" name="phoneNumber" required onkeyup="checkdataentry(this)">
+                        <input type="tel" id="updatephoneNumber" name="phoneNumber" required onkeyup="checkdataentry(this)" pattern="[9][5-8][0-9]{8}" maxlength="10">
                     </div>
                     <div class="addstudents-items updatestudent-data">
                         <label for="Image">Image</label>
-                        <input type="file" id="updateImage" name="Image" required>
+                        <input type="file" id="updateImage" name="Image">
                     </div>
                     <div class="addstudents-items" id="update-btn">
-                        <input type="button" value="UpdateStudent" class="updatestudent-btn" id="updatebtn">
+                        <input type="submit" value="UpdateStudent" class="updatestudent-btn" id="updatebtn">
                         <input type="button" value="Cancel" class="Addstudent-btn" id="cancelbtn">
                     </div>
                     <div class="addstudents-items" id="message">
@@ -126,6 +124,7 @@ else{
                     <th>Name</th>
                     <th>Image</th>
                     <th>Email</th>
+                    <th>Phone Number</th>
                     <th>Date</th>
                 </tr>
             </thead>

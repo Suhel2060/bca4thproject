@@ -15,7 +15,7 @@ if (isset($_FILES['img'])) {
         $insertdatastatus = studentDataStore();
         if ($insertdatastatus) {
             $date = date('Y-m-d');
-            echo json_encode(['status' => true,"username" => $username,"email" => $email,"studentname" => $studentname,"image" => $imageurl,"date" => $date]);
+            echo json_encode(['status' => true,"username" => $username,"email" => $email,"studentname" => $studentname,"image" => $imageurl,"date" => $date,"phonenumber" => $phonenumber]);
         }
     }
 } else {
@@ -28,10 +28,11 @@ if (isset($_FILES['img'])) {
 function imagestore()
 {
     $uploaddir = '../admin/addstudents/studentimg/';
-    $uploadfile = $uploaddir . basename($_FILES['img']['name']);
+    $imagename=uniqid().'_'.basename($_FILES['img']['name']);
+    $uploadfile = $uploaddir.$imagename;
     if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
         global $imageurl;
-        $imageurl = '../addstudents/studentimg/' . basename($_FILES['img']['name']);
+        $imageurl =$imagename;
         return true;
     } else {
         echo json_encode(["error" => false]);

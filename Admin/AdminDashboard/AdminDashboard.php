@@ -1,11 +1,10 @@
 <?php
 session_start();
 if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
-header("Location:../../user/usernavbar.php");
-}
+    header("Location:../../user/userdashboard/userdashboard.php");}
 else{
     if($_SESSION["user_status"]=="user"){
-        header("Location:../../user/usernavbar.php");
+        header("Location:../../user/userdashboard/userdashboard.php");
     }
 }
 ?>
@@ -40,32 +39,27 @@ else{
                     
                     <i class="fa-solid fa-user-group"></i><br>
                     <h3>Users</h3>
-                    <h2>0</h2>
+                    <h2 class='dashboard-data'>0</h2>
                 </div>
                 <div class="admin-body-items">
                     <i class="fa-solid fa-book"></i><br>
                     <h3>Total Books</h3>
-                    <h2>0</h2>
-                </div>
-                <div class="admin-body-items">
-                    <i class="fa-solid fa-list"></i><br>
-                    <h3>Catagories</h3>
-                    <h2>0</h2>
+                    <h2 class='dashboard-data'>0</h2>
                 </div>
                 <div class="admin-body-items">
                     <i class="fa-solid fa-user"></i><br>
                     <h3>Authors</h3>
-                    <h2>0</h2>
+                    <h2 class='dashboard-data'>0</h2>
                 </div>
                 <div class="admin-body-items">
                     <i class="fa-solid fa-recycle"></i><br>
                     <h3>Book Issued</h3>
-                    <h2>0</h2>
+                    <h2 class='dashboard-data'>0</h2>
                 </div>
                 <div class="admin-body-items">
                     <i class="fa-solid fa-recycle"></i><br>
                     <h3>Retuned Books</h3>
-                    <h2>0</h2>
+                    <h2 class='dashboard-data'>0</h2>
                 </div>
 
             </div>

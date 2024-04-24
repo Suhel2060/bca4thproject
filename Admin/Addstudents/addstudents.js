@@ -1,4 +1,5 @@
 let userdata, datacount, inputdataverify = 0;
+let imageurl='../addstudents/studentimg/'
 
 //to load all the data when window loadqa
 window.addEventListener("load", () => {
@@ -11,8 +12,9 @@ window.addEventListener("load", () => {
                 let studentdata = `<tr>
             <td>${data[i].username}</td>
             <td>${data[i].studentname}</td>
-            <td  id="table-image"><img src="${data[i].image}" alt=""></td>
+            <td  id="table-image"><img src="${imageurl+data[i].image}" alt=""></td>
             <td>${data[i].email}</td>
+            <td>${data[i].phonenumber}</td>
             <td>2080-12-30</td>
             <td><button onclick="edituser(this)">edit</button><br><button onclick="removedata(this)" id="removebtn">delete</button></td>
             
@@ -60,8 +62,9 @@ addbtn.addEventListener("submit", (e) => {
                     let table_data = ` <tr>
         <td>${insertdata.username}</td>
         <td>${insertdata.studentname}</td>
-        <td  id="table-image"><img src="${insertdata.image}" alt=""></td>
+        <td  id="table-image"><img src="${imageurl+insertdata.image}" alt=""></td>
         <td>${insertdata.email}</td>
+        <td>${insertdata.phonenumber}</td>
         <td>${insertdata.date}</td>
         <td><button onclick="edituser(this)">edit</button><br><button onclick="removedata(this)" id="removebtn">delete</button></td>
         </tr>`;
@@ -160,7 +163,7 @@ function loaddetails(data) {
     let table_data = ` <tr>
 <td>${data.username}</td>
 <td>${data.studentname}</td>
-<td  id="table-image"><img src="${data.image}" alt=""></td>
+<td  id="table-image"><img src="${imageurl+data.image}" alt=""></td>
 <td>${data.email}</td>
 <td>${data.date}</td>
 <td><button onclick="edituser(this)">edit</button><br><button onclick="removedata(this)" id="removebtn">delete</button></td>
@@ -328,8 +331,9 @@ function checkdataentry(t) {
 // }
 
 //update the user
-let usernameforupdate,imageforupdate;
+let usernameforupdate,imageforupdate,updatehtml;
 function edituser(t){
+    updatehtml=t.parentElement.parentElement;
     let username=t.parentElement.parentElement.children[0].innerHTML;
     let formdata=new FormData();
     formdata.append("username",username);
@@ -360,7 +364,8 @@ document.querySelector('#cancelbtn').addEventListener("click",()=>{
 })
 
 //funtion for update btn
-document.querySelector('#updatebtn').addEventListener("click",()=>{
+document.querySelector('#updateStudentForm').addEventListener("submit",(e)=>{
+    e.preventDefault();
     let data=new FormData();
 data.append("updateusername",document.querySelector('#updatestudentID').value);
 data.append("username",usernameforupdate);
@@ -368,7 +373,7 @@ data.append("name",document.querySelector('#updatestudentName').value);
 data.append("email",document.querySelector('#updatestudentEmail').value);
 data.append("phonenumber",document.querySelector('#updatephoneNumber').value);
 let image=document.querySelector('#updateImage')
-if(image.files.length==0||imageforupdate=="../addstudents/studentimg/"+image.files[0].name){
+if(image.files.length==0||imageforupdate==image.files[0].name){
     console.log("empty")
     data.append("imagedata","false");
 }else{
@@ -383,5 +388,6 @@ fetch("../../phpfile/updatestudent.php",{
 }).then(response=>response.json())
 .then((responsedata)=>{
 console.log(responsedata);
+
 })
 })

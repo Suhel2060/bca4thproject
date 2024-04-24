@@ -75,7 +75,7 @@ input {
     border: 2px solid black;
     color: black;
 } */
-.Addstudent-btn{
+.Addstudent-btn,.updatestudent-btn{
     margin: 17px 20px;
     display: inline-block;
     height: 38px;

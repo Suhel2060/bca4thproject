@@ -2,17 +2,30 @@ var bookdata;
 var flag = 0;
 let flag1 = 0;
 var I, book_index;
+let imageurl='../adminaddbooks/bookimg/';
+let click=0
 function showdetails(event) {
+    click=1;
     event.stopPropagation();
     // console.log(bookdata)
-    console.log(event.clientX)
+
 
     let x = event.clientX;
     let y = event.clientY;
+    let x1,y1;
+    if(x>1080){
+        x1 = x - 360
+        y1 = y - 250; 
+        console.log('x:'+x)
+        console.log('y:'+y)
+    }else{
+    console.log('x:'+x)
+    console.log('y:'+y)
     // let x = event.pageX;
     //  let y = event.pageY;
-    var x1 = x + 40;
-    var y1 = y - 250;
+    x1 = x + 40;
+    y1 = y - 250;
+    }
     if (flag1 == 0) {
         flag1 = 1;
         book_index = document.elementFromPoint(x, y).parentElement.children[0].value;
@@ -24,23 +37,33 @@ function showdetails(event) {
 
     if (flag == 1) {
         I.style.display = "inline-block";
+        let bookstatus=bookdata[book_index].currentquantity==0?"Unavailable":"available";
         console.log(book_index);
-        document.querySelector('.hover-image').src = bookdata[book_index].image;
+        document.querySelector('.hover-image').src = imageurl+bookdata[book_index].image;
+        document.querySelector('.bookstatus h3').innerHTML = bookstatus;
+        document.querySelector('.bookstatus h3').style.color = bookdata[book_index].currentquantity==0?"red":"green";
         document.querySelector('.hover-container .bookname').innerHTML = bookdata[book_index].bookname;
         document.querySelector('.hover-container .catagory').innerHTML = bookdata[book_index].tag;
         document.querySelector('.hover-container .author').innerHTML = bookdata[book_index].authorname;
         document.querySelector('.hover-container .description').innerHTML = bookdata[book_index].description;
+        document.querySelector('.bookstatus i').style.color = bookdata[book_index].currentquantity==0?"red":"green";
+        document.querySelector('.bookstatus i').style.backgroundColor = bookdata[book_index].currentquantity==0?"red":"green";
+        document.querySelector('.hover-container .description').innerHTML = bookdata[book_index].description;
+
 
     }
     if (flag == 0) {
         let hover_data = ` <div class='hover-container'> 
         <div class='image'>
-        <img src="${bookdata[book_index].image}"alt='' class="hover-image">
+        <img src="${imageurl+bookdata[book_index].image}"alt='' class="hover-image">
+        <div class='bookstatus'>
+        <span><i class="fa-regular fa-circle" style='color:${bookdata[book_index].currentquantity==0?"red":"green"};background-color:${bookdata[book_index].currentquantity==0?"red":"green"}'></i></span>
+        <h3 style='display:inline-block; color:${bookdata[book_index].currentquantity==0?"red":"green"};'>${bookdata[book_index].currentquantity==0?"Unavailable":"available"}</h3>
         </div>
-        <h4 style="display:inline">Book Name:</h4>
-        <h4 style="display:inline" class="bookname">${bookdata[book_index].bookname}</h4>
-        <p class='main-book-details catagory' >${bookdata[book_index].tag}</p>
-        <p class='main-book-details author'>${bookdata[book_index].authorname}</p>
+        </div>
+        <h4 style="display:inline" class="bookname" style="word-break:break-all">${bookdata[book_index].bookname}</h4>
+        <p class='main-book-details catagory' style="word-break:break-all">${bookdata[book_index].tag}</p>
+        <p class='main-book-details author'style="word-break:break-all">${bookdata[book_index].authorname}</p>
         <p class='hover-book-description description'>${bookdata[book_index].description}</p>
         </div>`
         document.querySelector('.book-details-container').insertAdjacentHTML('afterend', hover_data);
@@ -54,7 +77,10 @@ function showdetails(event) {
 
 }
 function hidedetails() {
-    I.style.display = "none";
+    if(click==1){
+    I.style.display = "none";click=0;
+    }
+
     flag1 = 0;
 }
 
@@ -84,13 +110,15 @@ window.addEventListener("load", () => {
             data.forEach(data => {
                 let html = ` <div class="book-details" >
             <input type="hidden" value="${i++}">
-            <img src="${data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+
+            <img src="${imageurl+data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
             <div class="icon" onclick="issuebooks(this)">
                 <i class="fa-solid fa-plus"></i>
             </div>
             <div class="book-description">
                 <h3>${data.bookname}</h3>
             </div>
+            <input type="hidden" value="${data.book_id}">
         </div>`
                 document.querySelector('.book-details-container').insertAdjacentHTML("beforeend", html);
             });
@@ -102,9 +130,11 @@ window.addEventListener("load", () => {
 
 function issuebooks(t) {
 
+    let bookid= t.parentElement.children[4].innerHTML;
     let bookname = t.parentElement.children[3].children[0].innerHTML;
     let url = new URL("http://localhost/BCA4THPROJECT/admin/adminisuuebook/adminissuebook.php");
     url.searchParams.append('bookname', bookname);
+    url.searchParams.append('bookid', bookid);
     window.location.href = url;
 }
 
@@ -154,13 +184,14 @@ function searchdata(e) {
                         }
                         let html = ` <div class="book-details" >
             <input type="hidden" value="${count}">
-            <img src="${data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+            <img src="${imageurl+data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
             <div class="icon" onclick="issuebooks(this)">
                 <i class="fa-solid fa-plus"></i>
             </div>
             <div class="book-description">
                 <h3>${data.bookname}</h3>
             </div>
+            <input type="hidden" value="${data.book_id}">
         </div>`
                         if (i == 0) {
                             document.querySelector('.book-details-container').innerHTML = html;
@@ -184,13 +215,14 @@ function searchdata(e) {
             count = 0;
             let html = ` <div class="book-details" >
         <input type="hidden" value="${k}">
-        <img src="${bookdata.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+        <img src="${imageurl+bookdata.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
         <div class="icon" onclick="issuebooks(this)">
             <i class="fa-solid fa-plus"></i>
         </div>
         <div class="book-description">
             <h3>${bookdata.bookname}</h3>
         </div>
+        <input type="hidden" value="${bookdata.book_id}">
     </div>`
             if (k == 0) {
                 document.querySelector('.book-details-container').innerHTML = html;

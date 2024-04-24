@@ -48,10 +48,11 @@ function getbookid($bookname,$tags,$authorname){
 function bookimagestore()
 {
     $uploaddir = '../admin/adminaddbooks/bookimg/';
-    $uploadfile = $uploaddir . basename($_FILES['image']['name']);
+    $imagename=uniqid().'_'.basename($_FILES['image']['name']);
+    $uploadfile = $uploaddir.$imagename;
     if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
         global $imageurl;
-        $imageurl = '../adminaddbooks/bookimg/' . basename($_FILES['image']['name']);
+        $imageurl = $imagename;
         return true;
     } else {
         echo json_encode(["imageinsert" => false]);

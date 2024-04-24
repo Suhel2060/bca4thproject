@@ -10,13 +10,18 @@ $query="select book_id from individual_book natural join issuebooks where book_i
 $row=mysqli_query($conn,$query);
 $result=mysqli_fetch_row($row);
 if($result==0){
+    $query="select image from bookdetails where book_id='$bookid'";
+
+    $result=mysqli_query($conn,$query);
+    $image=mysqli_fetch_assoc($result);
+    $imageurl='../admin/adminaddbooks/bookimg/'.$image['image'];
+    unlink($imageurl);
 $conn->begin_transaction();
 try{
 $conn->query("delete from individual_book where book_id=$bookid");
 $conn->query("delete from bookdetails where book_id=$bookid");
 $conn->commit();
 echo json_encode(["remove" => true]);
-
 
 }
 catch(Exception $e){

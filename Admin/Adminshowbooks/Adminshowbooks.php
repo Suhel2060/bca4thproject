@@ -1,12 +1,10 @@
 <?php
 session_start();
 if(!(isset($_SESSION["loginstatus"])&&isset($_SESSION["admin_username"])&&isset($_SESSION["user_status"]))){
-header("Location:../../user/usernavbar.php");
-}
+    header("Location:../../user/userdashboard/userdashboard.php");}
 else{
     if($_SESSION["user_status"]=="user"){
-        header("Location:../../user/usernavbar.php");
-    }
+        header("Location:../../user/userdashboard/userdashboard.php");    }
 }
 ?>
 <!DOCTYPE html>

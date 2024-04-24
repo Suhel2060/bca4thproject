@@ -4,9 +4,10 @@ let searchbookdata;
 window.addEventListener("load", () => {
     url = new URLSearchParams(window.location.search);
     bookname = url.get("bookname");
+    bookid=url.get('bookid');
+    console.log(bookid)
     console.log(bookname);
-    document.querySelector('#BookName').value = url.get("bookname");
-})
+    document.querySelector('#BookName').value = url.get("bookname");})
 
 
 function issuebook(e) {
@@ -45,6 +46,9 @@ function issuebook(e) {
                                 messageDisplay();
                                 document.querySelector("#studentimg").style.display = "none";
                                 bookname = null;
+                                url.delete('bookid')
+                                url.delete('bookname')
+                                window.history.replaceState({}, '', url);
 
                             }
                         } else {
@@ -90,7 +94,7 @@ function userimage() {
     })
         .then(response => response.json())
         .then((data) => {
-            document.querySelector(".issue-book-formitems img").src = data.image[0];
+            document.querySelector(".issue-book-formitems img").src = '../addstudents/studentimg/'+data.image[0];
             document.querySelector("#studentimg").style.display = "block";
 
 
@@ -158,9 +162,12 @@ function bookdata_search() {
 
 
 }
-// function hidesearch(){
-//     document.querySelector(".list").style.display = "none";
-// }
+function hidesearch(){
+    setTimeout(() => {
+        document.querySelector(".list").style.display = "none"; 
+    }, 100);
+
+}
 
 function loadbookid(t){
     let bookname = document.querySelector("#BookName").value;

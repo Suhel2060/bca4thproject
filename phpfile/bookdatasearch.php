@@ -20,13 +20,13 @@ if($searchname=="null"){
 
 // $searchstring3="%".$search."%";
 if($searchname=="null"||$searchid=="null"){
-$query="select individual_book_id,bookname from individual_book natural join bookdetails where bookname like '$searchstring2' or individual_book_id like '$searchstring1' and book_issue_status='notissued' and book_status='available'";
+$query="select individual_book_id,bookname from bookdetails natural join individual_book where bookname like '$searchstring2' or individual_book_id like '$searchstring1' and book_issue_status='notissued' and book_status='available'";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_all($result,MYSQLI_ASSOC);
 echo json_encode($row);
 }
 else{
-    $query="select individual_book_id from individual_book natural join bookdetails where bookname like '$searchstring2' and individual_book_id like '$searchstring1' and book_issue_status='notissued' and book_status='available'";
+    $query="select individual_book_id from bookdetails natural join individual_book where bookname like '$searchstring2' and individual_book_id like '$searchstring1' and book_issue_status='notissued' and book_status='available'";
     $result=mysqli_query($conn,$query);
     $row=mysqli_fetch_all($result,MYSQLI_ASSOC);
     echo json_encode($row); 
