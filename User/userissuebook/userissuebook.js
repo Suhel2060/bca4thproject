@@ -118,6 +118,7 @@ let differenceInMilliseconds = targetDate - currentDate;
 let remainingSeconds = Math.floor((differenceInMilliseconds % (1000 * 60)) / 1000);
 document.querySelector(`.remaining${index}`).innerHTML=`${remainingHours} H : ${ remainingMinutes}M : ${remainingSeconds} S`
 if(remainingHours<0||remainingMinutes<0){
+    document.querySelector(`.remaining${index}`).innerHTML=`00 H : 00 M :00 S`
 clearInterval(interval);
 }
 }
@@ -145,6 +146,7 @@ let differenceInMilliseconds = targetDate - currentDate;
 let remainingSeconds = Math.floor((differenceInMilliseconds % (1000 * 60)) / 1000);
 document.querySelector(`.remaining${index}`).innerHTML=`${remainingHours} H : ${ remainingMinutes}M : ${remainingSeconds} S`
 if(remainingHours<0||remainingMinutes<0){
+    document.querySelector(`.remaining${index}`).innerHTML=`00 H : 00 M :00 S`
     clearInterval(interval2);
     }
 }
@@ -172,6 +174,7 @@ let differenceInMilliseconds = (targetDate - currentDate);
 let remainingSeconds = Math.floor((differenceInMilliseconds % (1000 * 60)) / 1000);
 document.querySelector(`.remaining${index}`).innerHTML=`${remainingHours} H : ${ remainingMinutes}M : ${remainingSeconds} S`
 if(remainingHours<0||remainingMinutes<0){
+    document.querySelector(`.remaining${index}`).innerHTML=`00 H : 00 M :00 S`
     clearInterval(interval3);
     }
 }
@@ -198,6 +201,7 @@ let differenceInMilliseconds = (targetDate - currentDate);
 let remainingSeconds = Math.floor((differenceInMilliseconds % (1000 * 60)) / 1000);
 document.querySelector(`.remaining${index}`).innerHTML=`${remainingHours} H : ${ remainingMinutes}M : ${remainingSeconds} S`
 if(remainingHours<0||remainingMinutes<0){
+    document.querySelector(`.remaining${index}`).innerHTML=`00 H : 00 M :00 S`
     clearInterval(interval4);
     }
 }
@@ -224,6 +228,7 @@ let differenceInMilliseconds = (targetDate - currentDate);
 let remainingSeconds = Math.floor((differenceInMilliseconds % (1000 * 60)) / 1000);
 document.querySelector(`.remaining${index}`).innerHTML=`${remainingHours} H : ${ remainingMinutes}M : ${remainingSeconds} S`
 if(remainingHours<0||remainingMinutes<0){
+    document.querySelector(`.remaining${index}`).innerHTML=`00 H : 00 M :00 S`
     clearInterval(interval5);
     }
 }

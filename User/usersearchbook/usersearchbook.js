@@ -16,7 +16,7 @@ function showdetails(event) {
     let x1,y1;
     if(x>1080){
         x1 = x - 360
-        y1 = y - 250; 
+        y1 = y - 150; 
         console.log('x:'+x)
         console.log('y:'+y)
     }else{
@@ -25,7 +25,7 @@ function showdetails(event) {
     // let x = event.pageX;
     //  let y = event.pageY;
     x1 = x + 40;
-    y1 = y - 250;
+    y1 = y - 150;
     }
     if (flag1 == 0) {
         flag1 = 1;
@@ -211,7 +211,7 @@ const searchbooks=(searchdata)=>{
         let k=0;
         bookdata.forEach(bookdata => {
             let html = ` <div class="book-details" >
-            <input type="hidden" value="${data.book_id}">
+            <input type="hidden" value="${bookdata.book_id}">
         <img src="${imageurl+bookdata.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
         <div class="book-description">
             <h3>${bookdata.bookname}</h3>
@@ -229,3 +229,9 @@ const searchbooks=(searchdata)=>{
         document.querySelector(".searchdatalist").style.display = "none";
     }
 }
+
+function hidesearch(){
+    document.querySelector(".searchdatalist").style.display = "none";
+}
+
+

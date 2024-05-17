@@ -18,6 +18,7 @@
 .search{
     position: absolute;
     right: 35px;
+    cursor: pointer;
     margin: 30px 10px;
 }
 
@@ -29,7 +30,6 @@
     padding: 0px 18px 0px 6px;
     
 }
-
 
 .search i{
     z-index: 10;
@@ -47,12 +47,18 @@
     display: block;
     position: relative;
     z-index: 20;
-    max-height: 307px;
-    overflow: auto;
+    /* width: 40%;
+    overflow: hidden; */
 }
 .searchdatalist li{
     margin-bottom: 4px;
+    width: 334px;
+    overflow-x: scroll;
 }
+.searchdatalist li::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 /* show book body */
 .book-details-container{
     border: 3px solid #aed9db38;
@@ -214,7 +220,6 @@
     overflow: hidden;
     word-break: break-all;
 }
-/* .bo
 
 
 

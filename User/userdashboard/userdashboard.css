@@ -56,6 +56,7 @@ section{
     padding: 3px 6px;
     z-index: 5;
     background-color: azure;
+    cursor: pointer;
 }
 .fa-arrow-right{
     position: absolute;
@@ -67,6 +68,7 @@ section{
     padding: 3px 6px;
     z-index: 5;
     background-color: azure;
+    cursor: pointer;
 }
 /* .slider-container i{
     position: absolute;
@@ -94,7 +96,7 @@ section{
     max-height: 100%;
     /* border: 2px solid black; */
     margin: 30px;
-    padding: 15px 0px;
+    /* padding: 15px 0px; */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: 0px;
@@ -104,8 +106,12 @@ section{
     gap: 0px;
     scroll-behavior: smooth;
     background-color: #f2f2f2;
+    position: relative;
 
 
+}
+.slider-container:last-child{
+    margin-right: 0px;
 }
 .slider-container::-webkit-scrollbar{
     display: none;
@@ -122,10 +128,14 @@ section{
     position: relative;
     cursor: pointer;
 }
-
+.dashboard-tag{
+    margin: 20px 0px 0px 35px;
+}
 .show-data {
     width: 100%;
+    max-height: 100%;
     height: 100%;
+    overflow-y: scroll;
     position: absolute;
     top: 0px;
     background-color: black;
@@ -134,13 +144,17 @@ section{
     /* transform: translate(0px, 0px); */
     transition: transform 0.3s ease;
 }
+.show-data::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 .show-data p,.show-data h3{
     opacity: 4;
     color: white;
     background: none;
     word-break: break-all;
     margin: 20px;
-    user-select: none;
+    /* user-select: none; */
 
 }
 
@@ -152,6 +166,7 @@ section{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
 
 .dragging{

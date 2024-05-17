@@ -18,6 +18,7 @@ if($searchname=="null"){
     $searchstring2="%".$searchname."%";
 }
 
+
 // $searchstring3="%".$search."%";
 if($searchname=="null"||$searchid=="null"){
 $query="select individual_book_id,bookname from bookdetails natural join individual_book where bookname like '$searchstring2' or individual_book_id like '$searchstring1' and book_issue_status='notissued' and book_status='available'";
@@ -31,9 +32,6 @@ else{
     $row=mysqli_fetch_all($result,MYSQLI_ASSOC);
     echo json_encode($row); 
 }
-
-
-
 
 
 ?>

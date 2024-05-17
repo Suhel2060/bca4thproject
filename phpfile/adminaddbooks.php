@@ -60,6 +60,7 @@ function bookimagestore()
     }
 }
 
+
 function bookDataStore()
 {
 
@@ -71,10 +72,11 @@ function bookDataStore()
     $tags = $_POST['tags'];
     $description = $_POST['description'];
     $quantity = intval($_POST['quantity']);
+    $book_issued=intval(0);
     $query = "SELECT book_id,quantity FROM bookdetails WHERE bookname='$bookname'";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) == 0) {
-        $query1 = "INSERT INTO bookdetails(ISBN,bookname,authorname,tag,`image`,`description`,quantity,currentquantity) VALUES ('$isbn','$bookname','$authorname','$tags','$imageurl','$description',$quantity,$quantity)";
+        $query1 = "INSERT INTO bookdetails(ISBN,bookname,authorname,tag,`image`,`description`,quantity,currentquantity,book_issued) VALUES ('$isbn','$bookname','$authorname','$tags','$imageurl','$description',$quantity,$quantity,$book_issued)";
         if (mysqli_query($conn, $query1)) {
             $flag=0;
             $query2 = "SELECT book_id,quantity FROM bookdetails WHERE bookname='$bookname'";

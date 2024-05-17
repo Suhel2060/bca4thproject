@@ -196,8 +196,8 @@
                 </div>
             </div> -->
         </div>
-        <div class="search">
-            <input type="text" class="search_input" placeholder="search books" onkeyup="searchdata(event)">
+        <div class="search" >
+            <input type="text" class="search_input" placeholder="search books" onblur="hidesearch()" onkeyup="searchdata(event)" >
             <i class="fa-solid fa-magnifying-glass"></i>
             <ol class="searchdatalist" style="list-style-type:none">
                 

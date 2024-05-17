@@ -1,9 +1,5 @@
 // for scrolling
-let firstcardwidth=0;
-
-
-
-
+let firstcardwidth = 0;
 let tags = [], result = [];
 let bookdata;
 window.addEventListener("load", () => {
@@ -28,25 +24,28 @@ window.addEventListener("load", () => {
                     },
                     body: JSON.stringify(tag_data),
                 })
-                    .then((response) => response.json())
+                    .then((response) =>{ 
+                        if (!response.ok) {
+                            throw new Error('Network error');
+                          }
+                        return response.json()})
                     .then((data) => {
                         document.querySelector('section').innerHTML += `<div class="scroll-container">
                         <i class="fa-solid fa-arrow-left" id="left" onclick="left(this)"></i>
-                        <h2>${tag_data.tags.charAt(0).toUpperCase()+tag_data.tags.slice(1)}</h2>
+                        <h2 class="dashboard-tag">${tag_data.tags.charAt(0).toUpperCase() + tag_data.tags.slice(1)}</h2>
                         <div class="slider-container">
     
                             ${data.map((data) => {
                             return `<div class="book-slider" draggable="false" onclick="dashboarddata(this)">
-                            <img src="${'../../admin/adminaddbooks/bookimg/'+data.image}" />
+                            <img src="${'../../admin/adminaddbooks/bookimg/' + data.image}" />
                             <div class="show-data">
                                 <div><h3>${data.bookname}</h3></div>
                                 <div><p>${data.authorname}</p></div>
-                                <div><p>${data.tag}</p></div>
                                 <div><p>${data.description}</p></div>
                                    
                                     </div>
                                 </div>`;
-                    
+
                         }).join('')}
 
                         </div>
@@ -55,8 +54,7 @@ window.addEventListener("load", () => {
 
                         // Accessing the width after rendering
                         firstcardwidth = document.querySelector('.book-slider').offsetWidth + 25;
-                        console.log("First card width:", firstCardWidth);
-                    })
+                    }).catch(error=>console.log(error))
             })
         });
 });
@@ -80,7 +78,8 @@ let isdragging = false,
 function left(t) {
 
 
-    scrolling = t.parentElement.children[1];
+    scrolling = t.parentElement.children[2];
+    console.log(scrolling)
     scrolling.classList.remove("dragging");
     scrolling.scrollLeft -= firstcardwidth;
     if (flag == 0) {
@@ -93,7 +92,7 @@ function left(t) {
 }
 
 function right(t) {
-    scrolling = t.parentElement.children[1];
+    scrolling = t.parentElement.children[2];
     scrolling.classList.remove("dragging");
     scrolling.scrollLeft += (firstcardwidth + 5);
     if (flag == 0) {
@@ -146,9 +145,9 @@ const draggingStop = () => {
 //     });
 // });
 
-function dashboarddata(t){
+function dashboarddata(t) {
 
-    let bookdata=t.children[1].children[0].children[0].innerHTML
-            localStorage.setItem('bookdata',bookdata);
-            window.location.pathname="/BCA4THPROJECT/user/usersearchbook/usersearchbook.php"
+    let bookdata = t.children[1].children[0].children[0].innerHTML
+    localStorage.setItem('bookdata', bookdata);
+    window.location.pathname = "/BCA4THPROJECT/user/usersearchbook/usersearchbook.php"
 }

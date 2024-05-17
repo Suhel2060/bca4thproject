@@ -19,6 +19,7 @@ header{
     text-align: center;
     border-radius: 50%;
     padding: 7px;
+    transition: all 0.4s ease-in;
 
 }
 .nav-logo{
@@ -26,6 +27,15 @@ header{
     font-weight: 500;
     font-size: 20px;
     user-select: none;
+    color:#2600807d;
+    transition: all 0.6s ease-out;
+    cursor: pointer;
+
+}
+
+.nav-logo:hover{
+color: #260080f0;
+
 }
 .border{
     border: 2px solid black;
@@ -89,7 +99,6 @@ header{
     right: 30px;
     width: 95px;
     height: 35px;
-    border: 2px solid black;
 
 }
 .btn{
@@ -102,26 +111,41 @@ header{
 }
 .login-user{
     position: relative;
-    right: 30px;
+    right: 100px;
     display: none;
+    flex-direction: row;
+    align-items: center;
 }
 .loginbtn button{
-width: 100%;
-height: 100%;
-border: 2px solid black;
-border-radius: 10px;
-padding-right: 20px;
-font-family: monospace;
-font-size: 17px;
-box-shadow: 2px 2px 2px 2px #aebdccdb; ;
-cursor: pointer;
+        width: 95%;
+        height: 88%;
+        border-radius: 10px;
+        padding-right: 20px;
+        font-family: monospace;
+        font-size: 17px;
+        box-shadow: 2px 2px 2px 2px #aebdccdb;
+        cursor: pointer;
+        text-align: center;
+        background-color: #415eff;
+        color: #faf2f2;
+}
+
+.loginbtn button:hover{
+    color:#d4a5a5 ;
+    background-color:#1133f4;
 }
 .loginbtn i{
     position: absolute;
     right: 11px;
     top: 7px;
     font-size: 20px;
+    color: #faf2f2;
 
+}
+#user-name{
+    margin-left: 10px;
+    font-size: 17px;
+    font-family: monospace;
 }
 #login{
     display: block;
@@ -131,6 +155,13 @@ cursor: pointer;
     display: none;
     z-index: 1;
 }
+.imagewrapper img{
+    width: 51px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid blue;
+}
+
 
 
 aside{
@@ -142,7 +173,7 @@ aside{
     padding: 25px 0px;
     transition: all 0.2s ease-in;
     z-index: -1;
-    background-color: aquamarine;
+    background-color:grey;
     opacity: 0;
     border-collapse: collapse;
 

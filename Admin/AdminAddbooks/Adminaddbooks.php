@@ -60,6 +60,9 @@ else{
                     <label for="Quantity">Quantity:</label>
                     <input type="number" id="Quantity" name="" class="form-inputs" required>
                 </div>
+                <div class="add-book-message">
+                    <span></span>
+                </div>
                 <div class="message"></div>
                 <div class="Add-book-formitems" id="form-btn">
                     <input type="submit" value="Add" class="addbtn btn"  style="display: inline-block;">
@@ -75,7 +78,7 @@ else{
             <thead>
                 <tr>
                     <th>Book ID</th>
-                    <th>Book Name</th>
+                    <th class="bookname_list">Book Name</th>
                     <th>Book ISBN</th>
                     <th>Book Author</th>
              

@@ -235,3 +235,6 @@ function searchdata(e) {
         document.querySelector(".searchdatalist").style.display = "none";
     }
 }
+function hidesearch(){
+    document.querySelector(".searchdatalist").style.display = "none";
+}

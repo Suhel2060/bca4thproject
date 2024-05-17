@@ -19,6 +19,7 @@ function insertbook(e){
     form_data.append("tags",tag_data);
     form_data.append("description",description);
     form_data.append("quantity",quantity);
+    // console.log(image.files[0],ISBN,bookname,authorname,tag_data,description,quantity)
     fetch("../../phpfile/adminaddbooks.php",{
         method:"POST",
         body: form_data,
@@ -31,9 +32,9 @@ function insertbook(e){
             document.querySelector(".message").classList.add("success");
             let bookdata = `<tr>
             <td>${data.bookid[0].book_id}</td>
-            <td>${data.bookname}</td>
-            <td>${data.isbn}</td>
-            <td>${data.authorname}</td>
+            <td class="bookname_list">${data.bookname}</td>
+            <td class="bookname_list">${data.isbn}</td>
+            <td class="bookname_list">${data.authorname}</td>
 
             <td class="btn-td"><button onclick="edituser(this)">edit</button></td><td class="btn-td"><button onclick="removedata(this)" id="removebtn">delete</button></td>
             
@@ -49,7 +50,13 @@ function insertbook(e){
             
         // </tr>`;
         //         document.querySelector("tbody").insertAdjacentHTML("beforeend", bookdata)
+        document.querySelector('.add-book-message span').innerHTML="Bookdata Insert Successfully";
+        document.querySelector('.add-book-message').setAttribute("style","color:blue");
+        document.querySelector('.add-book-message').style.opacity=1;
+        setTimeout(() => {
+            document.querySelector('.add-book-message').style.opacity=0;
 
+        }, 900);
 
         }
         else if(data.bookexists==true){
@@ -95,8 +102,14 @@ function insertbook(e){
             edittablerow.children[1].innerHTML=bookname;
             edittablerow.children[2].innerHTML=ISBN;
             edittablerow.children[3].innerHTML=authorname;
-
-
+            document.querySelector('.add-book-message span').innerHTML="Bookdata Update Successfully";
+            document.querySelector('.add-book-message').setAttribute("style","color:blue");
+            document.querySelector('.add-book-message').style.opacity=1;
+            setTimeout(() => {
+                document.querySelector('.add-book-message').style.opacity=0;
+    
+            }, 900);
+    
         }
     })}
 
@@ -114,9 +127,9 @@ window.addEventListener("load", () => {
             for (let i = 0; i < data.length; i++) {
                 let bookdata = `<tr>
             <td>${data[i].book_id}</td>
-            <td>${data[i].bookname}</td>
-            <td>${data[i].ISBN}</td>
-            <td>${data[i].authorname}</td>
+            <td class="bookname_list">${data[i].bookname}</td>
+            <td class="bookname_list">${data[i].ISBN}</td>
+            <td class="bookname_list">${data[i].authorname}</td>
 
             <td class="btn-td"><button onclick="edituser(this)">edit</button></td><td class="btn-td"><button onclick="removedata(this)" id="removebtn">delete</button></td>
             

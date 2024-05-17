@@ -32,7 +32,7 @@ body {
   margin: 22px 15px;
 }
 .Add-book-formitems {
-  margin: 20px 20px;
+  margin: 10px 20px;
 }
 
 .form-inputs {
@@ -54,6 +54,13 @@ body {
   width: 130px;
   font-size: 17px;
   height: 30px;
+}
+
+.add-book-message{
+  text-align: center;
+    opacity: 0;
+    user-select: none;
+    transition: opacity 0.2s ease-in;
 }
 textarea {
   resize: none;
@@ -115,11 +122,22 @@ table {
   max-height: 100%;
 
 }
+.bookname_list{
+  width: 200px;
+  max-width: 20rem;
+  overflow-x:scroll ;
+}
+.bookname_list::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 
 th, td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
+  user-select: none;
+  cursor: pointer;
 }
 
 th {
@@ -151,4 +169,29 @@ td button:nth-child(1){
 }
 .btn-td{
   width: 50px;
+}
+
+
+/* Media Query for responsiveness */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .Add-book-container {
+    width: 90%;
+    margin: 25px 5%;
+  }
+
+  .Add-book-formitems label {
+    width: 100%;
+  }
+
+  .Add-book-formitems select {
+    width: 100%;
+  }
+
+  .btn {
+    margin: 0px;
+  }
 }

@@ -4,9 +4,11 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Headers: *');
 header('Content-Type: application/json; charset=UTF-8' );
+$image;
 function authenticate($username1, $password2){
     require("../phpfile/dbconnect.php");
-    $query = "SELECT username,`password`,userstatus FROM userdetails WHERE username='$username1'";
+    global $image;
+    $query = "SELECT username,`password`,userstatus,`image` FROM userdetails WHERE username='$username1'";
     $result = mysqli_query($conn, $query);
     if(   $pulldata=mysqli_fetch_array($result)){
     if($pulldata["username"]==$username1 && password_verify($password2,$pulldata["password"])) {
@@ -14,6 +16,7 @@ function authenticate($username1, $password2){
             $_SESSION["loginstatus"] = "login";
             $_SESSION["admin_username"] = $username1;
             $_SESSION["user_status"] = $status;
+            $image=$pulldata['image'];
             return true;
     } else{
         return false;
@@ -30,7 +33,7 @@ if(isset($data)){
     $password = $data["password"];
     $validate = authenticate($username, $password);
     if($validate){
-        echo json_encode(["success" => true, "username" => $username, "user_status" =>  $_SESSION["user_status"]]);
+        echo json_encode(["success" => true, "username" => $username, "user_status" =>  $_SESSION["user_status"], "image" => $image]);
     }
     else {
         echo json_encode(["success" => false]);

@@ -32,7 +32,8 @@
                 </div> -->
             </div>
             <div class="login-user">
-                <i class="fa-regular fa-user"></i>
+                
+                <div class="imagewrapper"><img src="" alt="error"></div>
                 <span id="user-name"></span>
             </div>
             <div class="loginbtn">
@@ -54,16 +55,8 @@
                     <a href="../userdashboard/userdashboard.php">Home</a>
                 </div>
                 <div class="menu">
-                    <i class="fa-solid fa-bookmark"></i>
-                    <span>BOOKMARKS</span>
-                </div>
-                <div class="menu">
                     <i class="fa-solid fa-book"></i>
                     <a href="../userissuebook/userissuebook.php">Issued Books</a>
-                </div>
-                <div class="menu">
-                    <i class="fa-solid fa-book"></i>
-                    <span>ALL BOOKS</span>
                 </div>
                 <div class="menu">
                     <i class="fa-solid fa-magnifying-glass"></i>
