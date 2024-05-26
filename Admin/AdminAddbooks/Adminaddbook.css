@@ -162,6 +162,13 @@ td button:nth-child(1){
   width: 50px;
 
 }
+.tablehead{
+  position: sticky;
+  top: 0;
+}
+tr:nth-child(odd) {
+  background-color: #E7E9EB;
+}
 #removebtn{
   background-color: #BB2D3B;
   width: 50px;

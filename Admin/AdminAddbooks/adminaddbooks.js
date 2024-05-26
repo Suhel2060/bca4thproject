@@ -1,4 +1,5 @@
 let updatebookimage;
+let edittablerow//to get the row in which data to be edited
 function insertbook(e){
     e.preventDefault();
     if(document.querySelector('#operationtype').value=="addbook"){
@@ -28,9 +29,7 @@ function insertbook(e){
     .then((data)=>{
         console.log(data);
         if(data.status=="success"){
-            document.querySelector(".message").innerHTML="Data insert successful"
-            document.querySelector(".message").classList.add("success");
-            let bookdata = `<tr>
+                        let bookdata = `<tr>
             <td>${data.bookid[0].book_id}</td>
             <td class="bookname_list">${data.bookname}</td>
             <td class="bookname_list">${data.isbn}</td>
@@ -50,17 +49,17 @@ function insertbook(e){
             
         // </tr>`;
         //         document.querySelector("tbody").insertAdjacentHTML("beforeend", bookdata)
-        document.querySelector('.add-book-message span').innerHTML="Bookdata Insert Successfully";
-        document.querySelector('.add-book-message').setAttribute("style","color:blue");
-        document.querySelector('.add-book-message').style.opacity=1;
-        setTimeout(() => {
-            document.querySelector('.add-book-message').style.opacity=0;
-
-        }, 900);
+        showmessage("Bookdata Insert Successfully","blue")
 
         }
         else if(data.bookexists==true){
-            
+            showmessage("Bookdata aldready exists","red")
+        }
+        else if(data.datainsert==false){
+            showmessage("Bookdata Insert Unsuccessful","red")
+        }
+        else if(data.imageinsert==false){
+            showmessage("Image Insert Unsuccessful","red")
         }
     })
 }else{
@@ -74,13 +73,13 @@ function insertbook(e){
     let quantity=document.querySelector('#Quantity').value;
     // let tag=tag_data.split(",");
     let image=document.querySelector('#image');
-    if(image.files.length==0||imageforupdate==image.files[0].name){
+    if(image.files.length==0||updatebookimage==image.files[0].image){
         console.log("empty")
         form_data.append("imagedata","false");
     }else{
 
         form_data.append("imagedata","true");
-        form_data.append("image",document.querySelector('#updateImage').files[0]);
+        form_data.append("image",image.files[0]);
     
     }
 
@@ -99,20 +98,27 @@ function insertbook(e){
     .then((data)=>{
         console.log(data)
         if(data.success){
-            edittablerow.children[1].innerHTML=bookname;
-            edittablerow.children[2].innerHTML=ISBN;
-            edittablerow.children[3].innerHTML=authorname;
-            document.querySelector('.add-book-message span').innerHTML="Bookdata Update Successfully";
-            document.querySelector('.add-book-message').setAttribute("style","color:blue");
+            edittablerow.children[1].innerHTML=data.data[0].bookname;
+            edittablerow.children[2].innerHTML=data.data[0].isbn;
+            edittablerow.children[3].innerHTML=data.data[0].authorname;
+        showmessage("Bookdata Update Successfully","blue");
+    
+        }
+        else{
+            showmessage("Bookdata Update Unsuccessful","red"); 
+        }
+    })}
+
+}
+
+const showmessage=(message,colordetails)=>{
+    document.querySelector('.add-book-message span').innerHTML=message;
+            document.querySelector('.add-book-message').setAttribute("style",`color:${colordetails}`);
             document.querySelector('.add-book-message').style.opacity=1;
             setTimeout(() => {
                 document.querySelector('.add-book-message').style.opacity=0;
     
             }, 900);
-    
-        }
-    })}
-
 }
 
 
@@ -122,8 +128,8 @@ window.addEventListener("load", () => {
         .then(response => response.json())
         .then((data) => {
             console.log(data);
-            updatebookimage=data.image;
-            userdata = data;
+            
+            bookdata = data;
             for (let i = 0; i < data.length; i++) {
                 let bookdata = `<tr>
             <td>${data[i].book_id}</td>
@@ -135,6 +141,7 @@ window.addEventListener("load", () => {
             
         </tr>`;
                 document.querySelector("tbody").insertAdjacentHTML("beforeend", bookdata)
+                document.querySelector('.Add-book-container h2').innerHTML="Add Books"
 
             }
         })
@@ -144,9 +151,10 @@ window.addEventListener("load", () => {
 //update the book
 // let usernameforupdate,imageforupdate;
 
-let edittablerow//to get the row in which data to be edited
+
 function edituser(t){
     edittablerow=t.parentElement.parentElement;
+    console.log(edittablerow)
     let bookid=t.parentElement.parentElement.children[0].innerHTML;
     let formdata=new FormData();
     formdata.append("bookid",bookid);
@@ -164,6 +172,7 @@ function edituser(t){
             console.log(allhtml)
             // usernameforupdate=data.username;
             // imageforupdate=data.image;
+            document.querySelector('.Add-book-container h2').innerHTML="Update Books"
             allhtml[0].value=data.book_id;
             allhtml[1].value="updatebook";
             allhtml[2].value=data.ISBN;
@@ -171,6 +180,7 @@ function edituser(t){
             allhtml[4].value=data.authorname;
             allhtml[5].value=data.tag;
             allhtml[6].value=data.quantity;
+            updatebookimage=data.image;
             document.querySelector('textarea').value=data.description
             document.querySelector('.addbtn').style.display="none";
             document.querySelectorAll('.updatebtn').forEach((btn)=>{
@@ -191,7 +201,9 @@ function cancelupdate(){
 
     })
     document.querySelector('textarea').value=""
-    document.querySelector('#operationtype').value="updatebook"
+    document.querySelector('#operationtype').value="addbook";
+    document.querySelector('.Add-book-container h2').innerHTML="Add Books"
+
 }
 
 

@@ -28,20 +28,21 @@ else{
     <?php include('../adminheader/adminnav.php'); ?>
     <div class="container">
         <div class="Add-book-container">
+            <h2 style="text-align: center;"></h2>
             <form onsubmit="insertbook(event)">
                     <input type="text" id="bookid" name="" class="form-inputs" value="0" hidden>
                     <input type="text" id="operationtype" name="" class="form-inputs" value="addbook" hidden>
                 <div class="Add-book-formitems">
                     <label for="ISBN">ISBN:</label>
-                    <input type="text" id="ISBN" name="" class="form-inputs">
+                    <input type="text" id="ISBN" name="" class="form-inputs" minlength="12" maxlength="12" pattern="\d{12}" title="ISBN must be 12 digits"/>
                 </div>
                 <div class="Add-book-formitems">
                     <label for="BookName">Book Name:</label>
-                    <input type="text" id="BookName" name="" class="form-inputs" required>
+                    <input type="text" id="BookName" name="" class="form-inputs" title="Bookname is Required" required>
                 </div>
                 <div class="Add-book-formitems">
                     <label for="AuthorName">Author's Name:</label>
-                    <input type="text" id="AuthorName" name="" class="form-inputs" required>
+                    <input type="text" id="AuthorName" name="" class="form-inputs">
                 </div>
                 <div class="Add-book-formitems">
                     <label for="Tags">Tags:</label>
@@ -58,7 +59,7 @@ else{
 
                 <div class="Add-book-formitems">
                     <label for="Quantity">Quantity:</label>
-                    <input type="number" id="Quantity" name="" class="form-inputs" required>
+                    <input type="number" id="Quantity" name="" class="form-inputs" title="Quantity is Required" required>
                 </div>
                 <div class="add-book-message">
                     <span></span>
@@ -76,11 +77,13 @@ else{
         <table>
           
             <thead>
-                <tr>
+                <tr  class="tablehead">
                     <th>Book ID</th>
                     <th class="bookname_list">Book Name</th>
                     <th>Book ISBN</th>
                     <th>Book Author</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
              
                 </tr>
             </thead>

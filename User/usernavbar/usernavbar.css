@@ -1,3 +1,8 @@
+body{
+    background-color: #EEE8F6;
+    user-select: none;
+}
+
 header{
     position: fixed;
     width: 100%;
@@ -6,9 +11,10 @@ header{
     justify-content: space-between;
     align-items: center;
     /* background: rgba(139, 18, 139, 0.616); */
-    background-color:#F8F9FA;
+    background-color: lightblue;
     z-index: 2;
     top: 0px;
+    border-bottom: 3px solid #3b8ba5;
 }
 .icon{
     position: relative;
@@ -117,17 +123,17 @@ color: #260080f0;
     align-items: center;
 }
 .loginbtn button{
-        width: 95%;
-        height: 88%;
-        border-radius: 10px;
-        padding-right: 20px;
-        font-family: monospace;
-        font-size: 17px;
-        box-shadow: 2px 2px 2px 2px #aebdccdb;
-        cursor: pointer;
-        text-align: center;
-        background-color: #415eff;
-        color: #faf2f2;
+    width: 95%;
+    height: 94%;
+    border-radius: 7px;
+    padding-right: 20px;
+    font-family: monospace;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px 2px #aebdccdb;
+    cursor: pointer;
+    text-align: center;
+    background-color: #415eff;
+    color: #faf2f2;
 }
 
 .loginbtn button:hover{

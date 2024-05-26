@@ -6,7 +6,9 @@
 
 
 
-
+#Dashboard::before{
+    content: "";
+}
 /* Body */
 #admin-body{
     margin: 40px;

@@ -37,9 +37,13 @@ if ($imagedata == "true") {
             }
         
 
-            $query = "update bookdetails set bookname='$bookname',authorname='$authorname',description='$description',tag='$tags', quantity=$quantity1, currentquantity= $currentquantity2, image='$imageurl', isbn='$isbn' where book_id=$bookid'";
+            $query = "update bookdetails set bookname='$bookname',authorname='$authorname',description='$description',tag='$tags', quantity=$quantity1, currentquantity= $currentquantity2, image='$imageurl', isbn='$isbn' where book_id=$bookid";
+
             if (mysqli_query($conn, $query)) {
-                echo json_encode(["success" => true]);
+                $query="select bookname,isbn,authorname from bookdetails where book_id='$bookid'";
+                $row=mysqli_query($conn,$query);
+                $result=mysqli_fetch_all($row,MYSQLI_ASSOC);
+                echo json_encode(["success" => true, "data" => $result]);
             } else {
                 echo json_encode(["success" => false]);
             }
@@ -65,8 +69,14 @@ if ($imagedata == "true") {
             mysqli_query($conn, $query2);
         }
         $query = "update bookdetails set bookname='$bookname',authorname='$authorname',description='$description',tag='$tags', quantity=$quantity1, currentquantity= $currentquantity2, isbn='$isbn' where book_id=$bookid";
-        mysqli_query($conn, $query);
-        echo json_encode(["success" => true]);
+        if (mysqli_query($conn, $query)) {
+            $query="select bookname,isbn,authorname from bookdetails where book_id='$bookid'";
+            $row=mysqli_query($conn,$query);
+            $result=mysqli_fetch_all($row,MYSQLI_ASSOC);
+            echo json_encode(["success" => true, "data" => $result]);
+        } else {
+            echo json_encode(["success" => false]);
+        }
         $conn->commit();
     } catch (Exception $e) {
         echo json_encode(["error" => $e->getMessage(),"success" => false]);

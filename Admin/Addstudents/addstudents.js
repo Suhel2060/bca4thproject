@@ -15,7 +15,6 @@ window.addEventListener("load", () => {
             <td  id="table-image"><img src="${imageurl+data[i].image}" alt=""></td>
             <td>${data[i].email}</td>
             <td>${data[i].phonenumber}</td>
-            <td>2080-12-30</td>
             <td><button onclick="edituser(this)">edit</button><br><button onclick="removedata(this)" id="removebtn">delete</button></td>
             
         </tr>`;
@@ -65,7 +64,6 @@ addbtn.addEventListener("submit", (e) => {
         <td  id="table-image"><img src="${imageurl+insertdata.image}" alt=""></td>
         <td>${insertdata.email}</td>
         <td>${insertdata.phonenumber}</td>
-        <td>${insertdata.date}</td>
         <td><button onclick="edituser(this)">edit</button><br><button onclick="removedata(this)" id="removebtn">delete</button></td>
         </tr>`;
                     table += table.insertAdjacentHTML("beforeend", table_data);
@@ -381,13 +379,16 @@ if(image.files.length==0||imageforupdate==image.files[0].name){
     data.append("image",document.querySelector('#updateImage').files[0]);
 
 }
-console.log(usernameforupdate)
 fetch("../../phpfile/updatestudent.php",{
     method: "POST",
     body: data,
 }).then(response=>response.json())
-.then((responsedata)=>{
-console.log(responsedata);
-
+.then((data)=>{
+console.log(data);
+updatehtml.children[0].innerHTML=data.data[0].username;
+updatehtml.children[1].innerHTML=data.data[0].studentname;
+updatehtml.children[2].childrenn[0].src="../addstudents/studentimg/"+data.data[0].image;
+updatehtml.children[3].innerHTML=data.data[0].email;
+updatehtml.children[4].innerHTML=data.data[0].phonenumber;
 })
 })

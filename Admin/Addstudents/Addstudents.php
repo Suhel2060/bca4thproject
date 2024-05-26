@@ -119,13 +119,13 @@ else{
         </div>
         <table>
             <thead>
-                <tr>
+                <tr class="tablehead">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Image</th>
                     <th>Email</th>
                     <th>Phone Number</th>
-                    <th>Date</th>
+                    <th>Modify</th>
                 </tr>
             </thead>
             <tbody id="studentsTableBody">
