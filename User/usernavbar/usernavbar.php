@@ -1,0 +1,65 @@
+  <header>
+            <div class="icon" onclick="shownavbar()">
+                <i class="fa-solid fa-bars" id="list"></i>
+                <i class="fa-solid fa-xmark" id="cross"></i>
+
+            </div>
+            <div class="nav-logo" onclick="nav_logo()">
+                <h3 >library Management System</h3>
+            </div>
+            <div class="user-search-book">
+                <div class="searchbar searchfield">
+                    <input type="text" id="navbarbooksearch" name="" placeholder="Searh books" onkeyup="navsearchbooks(event)">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <!-- <div class="user-search-filter searchfield">
+                    <select name="" id="">
+                        <option value="">Book name</option>
+                        <option value="">Book name</option>
+                        <option value="">Book name</option>
+                        <option value="">Book name</option>
+                        <option value="">Book name</option>
+                    </select>
+                </div>
+                <div class="user-search-filter searchfield">
+                    <select name="" id="">
+                        <option value="">story</option>
+                        <option value="">story</option>
+                        <option value="">story</option>
+                        <option value="">story</option>
+                        <option value="">story</option>
+                    </select>
+                </div> -->
+            </div>
+            <div class="login-user">
+                
+                <div class="imagewrapper"><img src="" alt="error"></div>
+                <span id="user-name"></span>
+            </div>
+            <div class="loginbtn">
+                <div class="btn" id="login">
+                    <button onclick="show_login()">login</button>
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </div>
+                <div class="btn" id="logout">
+                    <button onclick="logout()">logout</button>
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </div>
+            </div>
+
+
+        </header>
+        <aside>
+                <div class="menu">
+                    <i class="fa-solid fa-house" id="homeicon"></i>
+                    <a href="../userdashboard/userdashboard.php" id="homename">Home</a>
+                </div>
+                <div class="menu">
+                    <i class="fa-solid fa-book" id="issuedicon"></i>
+                    <a href="../userissuebook/userissuebook.php" id="issuedname">Issued Books</a>
+                </div>
+                <div class="menu">
+                    <i class="fa-solid fa-magnifying-glass" id="searchicon"></i>
+                    <a href="../usersearchbook/usersearchbook.php" id="searchname">SEARCH BOOKS</a>
+                </div>
+            </aside>
