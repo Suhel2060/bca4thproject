@@ -51,15 +51,15 @@
         </header>
         <aside>
                 <div class="menu">
-                    <i class="fa-solid fa-house"></i>
-                    <a href="../userdashboard/userdashboard.php">Home</a>
+                    <i class="fa-solid fa-house" id="homeicon"></i>
+                    <a href="../userdashboard/userdashboard.php" id="homename">Home</a>
                 </div>
                 <div class="menu">
-                    <i class="fa-solid fa-book"></i>
-                    <a href="../userissuebook/userissuebook.php">Issued Books</a>
+                    <i class="fa-solid fa-book" id="issuedicon"></i>
+                    <a href="../userissuebook/userissuebook.php" id="issuedname">Issued Books</a>
                 </div>
                 <div class="menu">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <a href="../usersearchbook/usersearchbook.php">SEARCH BOOKS</a>
+                    <i class="fa-solid fa-magnifying-glass" id="searchicon"></i>
+                    <a href="../usersearchbook/usersearchbook.php" id="searchname">SEARCH BOOKS</a>
                 </div>
             </aside>

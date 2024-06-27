@@ -2,6 +2,9 @@
     padding: 0px;
     margin: 0px;
 }
+body{
+    user-select: none;
+}
 .body-container#blur.active{
     filter: blur(10px);
     user-select: none;
@@ -216,8 +219,11 @@ section{
     overflow: hidden;
     /* word-break: break-all; */
 }
-/* .bo
+#searchicon,#searchname{
+    color: blue;
+}
 
+/* .bo
 
 
 

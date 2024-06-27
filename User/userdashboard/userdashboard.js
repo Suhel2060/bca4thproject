@@ -36,8 +36,9 @@ window.addEventListener("load", () => {
                         <div class="slider-container">
     
                             ${data.map((data) => {
+                                let image = (data.image == "null") ? "https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user":'../../admin/adminaddbooks/bookimg/' + data.image;
                             return `<div class="book-slider" draggable="false" onclick="dashboarddata(this)">
-                            <img src="${'../../admin/adminaddbooks/bookimg/' + data.image}" />
+                            <img src="${image}" />
                             <div class="show-data">
                                 <div><h3>${data.bookname}</h3></div>
                                 <div><p>${data.authorname}</p></div>

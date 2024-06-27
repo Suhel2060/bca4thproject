@@ -13,7 +13,6 @@ $description;
 $quantity;
 $bookid;
 
-if (isset($_FILES["image"])) {
     $imagestatus = bookimagestore();
     if ($imagestatus) {
         $insertdatastatus = bookDataStore();
@@ -33,7 +32,7 @@ if (isset($_FILES["image"])) {
             ]);
         }
     }
-}
+
 
 function getbookid($bookname,$tags,$authorname){
     require('dbconnect.php');
@@ -47,17 +46,23 @@ function getbookid($bookname,$tags,$authorname){
 
 function bookimagestore()
 {
+    global $imageurl;
+    if($_POST['imagedata']=="true"){
     $uploaddir = '../admin/adminaddbooks/bookimg/';
     $imagename=uniqid().'_'.basename($_FILES['image']['name']);
     $uploadfile = $uploaddir.$imagename;
     if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-        global $imageurl;
+
         $imageurl = $imagename;
         return true;
     } else {
         echo json_encode(["imageinsert" => false]);
         return false;
     }
+}else{
+$imageurl=$_POST['image'];
+return true;
+}
 }
 
 
@@ -67,10 +72,10 @@ function bookDataStore()
     global $isbn, $bookname, $authorname, $tags, $description, $quantity, $imageurl;
     require("dbconnect.php");
     $isbn = $_POST['ISBN'];
-    $bookname = $_POST['bookname'];
-    $authorname = $_POST['authorname'];
+    $bookname = ucwords($_POST['bookname']);
+    $authorname = ucwords($_POST['authorname']);
     $tags = $_POST['tags'];
-    $description = $_POST['description'];
+    $description = ucwords($_POST['description']);
     $quantity = intval($_POST['quantity']);
     $book_issued=intval(0);
     $query = "SELECT book_id,quantity FROM bookdetails WHERE bookname='$bookname'";

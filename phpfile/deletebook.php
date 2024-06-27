@@ -14,8 +14,10 @@ if($result==0){
 
     $result=mysqli_query($conn,$query);
     $image=mysqli_fetch_assoc($result);
+    if(!$image['image']=="null"){
     $imageurl='../admin/adminaddbooks/bookimg/'.$image['image'];
     unlink($imageurl);
+    }
 $conn->begin_transaction();
 try{
 $conn->query("delete from individual_book where book_id=$bookid");

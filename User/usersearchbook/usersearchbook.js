@@ -2,71 +2,71 @@ var bookdata;
 var flag = 0;
 let flag1 = 0;
 var I, book_index;
-let imageurl='../../admin/adminaddbooks/bookimg/';
-let click=0;
-let bookdetails;
+let imageurl = '../../admin/adminaddbooks/bookimg/';
+let click = 0
 function showdetails(event) {
-    click=1;
+    click = 1;
     event.stopPropagation();
     // console.log(bookdata)
 
 
     let x = event.clientX;
     let y = event.clientY;
-    let x1,y1;
-    if(x>1080){
+    let x1, y1;
+    if (x > 1080) {
         x1 = x - 360
-        y1 = y - 150; 
-        console.log('x:'+x)
-        console.log('y:'+y)
-    }else{
-    console.log('x:'+x)
-    console.log('y:'+y)
-    // let x = event.pageX;
-    //  let y = event.pageY;
-    x1 = x + 40;
-    y1 = y - 150;
+        y1 = y - 250;
+        console.log('x:' + x)
+        console.log('y:' + y)
+    } else {
+        console.log('x:' + x)
+        console.log('y:' + y)
+        // let x = event.pageX;
+        //  let y = event.pageY;
+        x1 = x + 40;
+        y1 = y - 250;
     }
     if (flag1 == 0) {
         flag1 = 1;
         book_index = document.elementFromPoint(x, y).parentElement.children[0].value;
         console.log(book_index);
-       bookdetails=bookdata.filter((data)=>{if(data.book_id==book_index)return data})
-       console.log(bookdetails)
+
     }
     //  console.log(x);
     //  console.log(y);
 
     if (flag == 1) {
         I.style.display = "inline-block";
-        let bookstatus=bookdetails[0].currentquantity==0?"Unavailable":"available";
+        let image = (bookdata[book_index].image == "null") ? "https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user" :imageurl+bookdata[book_index].image;
+        let bookstatus = bookdata[book_index].currentquantity == 0 ? "Unavailable" : "available";
         console.log(book_index);
-        document.querySelector('.hover-image').src = imageurl+bookdetails[0].image;
+        document.querySelector('.hover-image').src = image;
         document.querySelector('.bookstatus h3').innerHTML = bookstatus;
-        document.querySelector('.bookstatus h3').style.color = bookdetails[0].currentquantity==0?"red":"green";
-        document.querySelector('.hover-container .bookname').innerHTML = bookdetails[0].bookname;
-        document.querySelector('.hover-container .catagory').innerHTML = bookdetails[0].tag;
-        document.querySelector('.hover-container .author').innerHTML = bookdetails[0].authorname;
-        document.querySelector('.hover-container .description').innerHTML = bookdetails[0].description;
-        document.querySelector('.bookstatus i').style.color = bookdetails[0].currentquantity==0?"red":"green";
-        document.querySelector('.bookstatus i').style.backgroundColor = bookdetails[0].currentquantity==0?"red":"green";
-        document.querySelector('.hover-container .description').innerHTML = bookdetails[0].description;
+        document.querySelector('.bookstatus h3').style.color = bookdata[book_index].currentquantity == 0 ? "red" : "green";
+        document.querySelector('.hover-container .bookname').innerHTML = bookdata[book_index].bookname;
+        document.querySelector('.hover-container .catagory').innerHTML = bookdata[book_index].tag;
+        document.querySelector('.hover-container .author').innerHTML = bookdata[book_index].authorname;
+        document.querySelector('.hover-container .description').innerHTML = bookdata[book_index].description;
+        document.querySelector('.bookstatus i').style.color = bookdata[book_index].currentquantity == 0 ? "red" : "green";
+        document.querySelector('.bookstatus i').style.backgroundColor = bookdata[book_index].currentquantity == 0 ? "red" : "green";
+        document.querySelector('.hover-container .description').innerHTML = bookdata[book_index].description;
 
 
     }
     if (flag == 0) {
+        let image = (bookdata[book_index].image == "null") ? "https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user" :imageurl+bookdata[book_index].image;
         let hover_data = ` <div class='hover-container'> 
         <div class='image'>
-        <img src="${imageurl+bookdetails[0].image}"alt='' class="hover-image">
+        <img src="${image }"alt='' class="hover-image">
         <div class='bookstatus'>
-        <span><i class="fa-regular fa-circle" style='color:${bookdetails[0].currentquantity==0?"red":"green"};background-color:${bookdetails[0].currentquantity==0?"red":"green"}'></i></span>
-        <h3 style='display:inline-block; color:${bookdetails[0].currentquantity==0?"red":"green"};'>${bookdetails[0].currentquantity==0?"Unavailable":"available"}</h3>
+        <span><i class="fa-regular fa-circle" style='color:${bookdata[book_index].currentquantity == 0 ? "red" : "green"};background-color:${bookdata[book_index].currentquantity == 0 ? "red" : "green"}'></i></span>
+        <h3 style='display:inline-block; color:${bookdata[book_index].currentquantity == 0 ? "red" : "green"};'>${bookdata[book_index].currentquantity == 0 ? "Unavailable" : "available"}</h3>
         </div>
         </div>
-        <h4 style="display:inline" class="bookname" style="word-break:break-all">${bookdetails[0].bookname}</h4>
-        <p class='main-book-details catagory' style="word-break:break-all">${bookdetails[0].tag}</p>
-        <p class='main-book-details author'style="word-break:break-all">${bookdetails[0].authorname}</p>
-        <p class='hover-book-description description'>${bookdetails[0].description}</p>
+        <h4 style="display:inline" class="bookname" style="word-break:break-all">${bookdata[book_index].bookname}</h4>
+        <p class='main-book-details catagory' style="word-break:break-all">${bookdata[book_index].tag}</p>
+        <p class='main-book-details author'style="word-break:break-all">${bookdata[book_index].authorname}</p>
+        <p class='hover-book-description description'>${bookdata[book_index].description}</p>
         </div>`
         document.querySelector('.book-details-container').insertAdjacentHTML('afterend', hover_data);
 
@@ -79,12 +79,13 @@ function showdetails(event) {
 
 }
 function hidedetails() {
-    if(click==1){
-    I.style.display = "none";click=0;
+    if (click == 1) {
+        I.style.display = "none"; click = 0;
     }
 
     flag1 = 0;
 }
+
 
 
 
@@ -100,10 +101,12 @@ window.addEventListener("load", () => {
             console.log(data)
             bookdata = data;
             data.forEach(data => {
+                let image = (data.image == "null") ?"https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user":imageurl+data.image;
+
                 let html = ` <div class="book-details" >
             <input type="hidden" value="${data.book_id}">
 
-            <img src="${imageurl+data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+            <img src="${image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
             <div class="book-description">
                 <h3>${data.bookname}</h3>
             </div>
@@ -182,10 +185,11 @@ const searchbooks=(searchdata)=>{
 
                     })
                     data.forEach(data => {
+                        let image = (data.image == "null") ?"https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user":imageurl+data.image;
 
                         let html = ` <div class="book-details" >
                         <input type="hidden" value="${data.book_id}">
-            <img src="${imageurl+data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+            <img src="${image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
             <div class="book-description">
                 <h3>${data.bookname}</h3>
             </div>
@@ -210,9 +214,11 @@ const searchbooks=(searchdata)=>{
         console.log("hello")
         let k=0;
         bookdata.forEach(bookdata => {
+            let image = (bookdata.image == "null") ? "https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user" :imageurl+bookdata.image;
+
             let html = ` <div class="book-details" >
             <input type="hidden" value="${bookdata.book_id}">
-        <img src="${imageurl+bookdata.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+        <img src="${image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
         <div class="book-description">
             <h3>${bookdata.bookname}</h3>
         </div>

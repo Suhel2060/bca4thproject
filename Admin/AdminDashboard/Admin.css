@@ -9,6 +9,10 @@
 #Dashboard::before{
     content: "";
 }
+#Dashboard{
+    text-decoration: underline;
+    color: red;
+}
 /* Body */
 #admin-body{
     margin: 40px;

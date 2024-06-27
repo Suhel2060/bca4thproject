@@ -30,7 +30,6 @@ window.addEventListener("load", () => {
 let addbtn = document.querySelector("#studentadd-form");
 addbtn.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (inputdataverify == 0) { id="removebtn"
         let username = document.querySelector("#studentID").value;
         let password = document.querySelector("#password").value;
         let studentname = document.querySelector("#studentName").value;
@@ -80,27 +79,11 @@ addbtn.addEventListener("submit", (e) => {
                         data.value = "";
                     })
 
-                } else {
-                    let message = document.querySelector('#insert-message');
-                    message.innerHTML = "Data insert unsuccessful";
-                    message.style.display = "block";
-                    message.style.color = "red";
-                    setTimeout(() => {
-                        message.style.display = "none";
-                    }, 3000);
-                }
+                } 
             })
     }
-    else {
-        let message = document.querySelector('#insert-message');
-        message.innerHTML = "Given data is not in format";
-        message.style.display = "block";
-        message.style.color = "red";
-        setTimeout(() => {
-            message.style.display = "none";
-        }, 3000);
-    }
-}
+
+
 );
 
 //Search the data 
@@ -211,115 +194,115 @@ function removedata(t) {
 
 
 //for verifyiing the input data using regex
-function checkdataentry(t) {
-    console.log(t.id);
-    var data = t.value;
-    console.log(t.value);
-    if (t.id == "studentID") {
-        let usernamepattern = /^[A-Za-z][A-Za-z0-9_]{7,29}$/
-        let result = usernamepattern.test(data)
-        console.log(result);
-        if (t.value == null || t.value == "") {
-            t.setAttribute("style", "color:black");
-        } else {
-            if (result) {
+// function checkdataentry(t) {
+//     console.log(t.id);
+//     var data = t.value;
+//     console.log(t.value);
+//     if (t.id == "studentID") {
+//         let usernamepattern = /^[A-Za-z][A-Za-z0-9_]{7,29}$/
+//         let result = usernamepattern.test(data)
+//         console.log(result);
+//         if (t.value == null || t.value == "") {
+//             t.setAttribute("style", "color:black");
+//         } else {
+//             if (result) {
 
-                t.setAttribute("style", "color:black");
-                console.log("verify")
-                inputdataverify = 0;
-            } else {
-                t.setAttribute("style", "color:red");
-                console.log("verify")
-                inputdataverify = 1
-            }
-        }
-    }
-    else if (t.id == "password") {
-        let passwordpattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*])(?!.*\s).{8,20}$/
-        let result = passwordpattern.test(data)
-        console.log(result);
-        if (t.value == null || t.value == "") {
-            t.setAttribute("style", "color:black");
-        } else {
-            if (result) {
+//                 t.setAttribute("style", "color:black");
+//                 console.log("verify")
+//                 inputdataverify = 0;
+//             } else {
+//                 t.setAttribute("style", "color:red");
+//                 console.log("verify")
+//                 inputdataverify = 1
+//             }
+//         }
+//     }
+//     else if (t.id == "password") {
+//         let passwordpattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*])(?!.*\s).{8,20}$/
+//         let result = passwordpattern.test(data)
+//         console.log(result);
+//         if (t.value == null || t.value == "") {
+//             t.setAttribute("style", "color:black");
+//         } else {
+//             if (result) {
 
-                t.setAttribute("style", "color:black");
-                console.log("verify")
-                inputdataverify = 0;
-            } else {
-                t.setAttribute("style", "color:red");
-                console.log("verify")
-                inputdataverify = 1
-            }
-        }
+//                 t.setAttribute("style", "color:black");
+//                 console.log("verify")
+//                 inputdataverify = 0;
+//             } else {
+//                 t.setAttribute("style", "color:red");
+//                 console.log("verify")
+//                 inputdataverify = 1
+//             }
+//         }
 
-    }
+//     }
 
-    else if (t.id == "studentEmail") {
-        let emailpattern = /^[a-zA-Z0-9._]+@gmail\.com$/
-        let result = emailpattern.test(data)
-        console.log(result);
-        if (t.value == null || t.value == "") {
-            t.setAttribute("style", "color:black");
-        } else {
-            if (result) {
+//     else if (t.id == "studentEmail") {
+//         let emailpattern = /^[a-zA-Z0-9._]+@gmail\.com$/
+//         let result = emailpattern.test(data)
+//         console.log(result);
+//         if (t.value == null || t.value == "") {
+//             t.setAttribute("style", "color:black");
+//         } else {
+//             if (result) {
 
-                t.setAttribute("style", "color:black");
-                console.log("verify")
-                inputdataverify = 0;
-            } else {
-                t.setAttribute("style", "color:red");
-                console.log("verify")
-                inputdataverify = 1
-            }
-        }
+//                 t.setAttribute("style", "color:black");
+//                 console.log("verify")
+//                 inputdataverify = 0;
+//             } else {
+//                 t.setAttribute("style", "color:red");
+//                 console.log("verify")
+//                 inputdataverify = 1
+//             }
+//         }
 
-    }
-    else if (t.id == "phoneNumber") {
-        let numberpattern = /^9\d{9}$/
-        let result = numberpattern.test(data)
-        console.log(result);
-        if (t.value == null || t.value == "") {
-            t.setAttribute("style", "color:black");
-        } else {
-            if (result) {
+//     }
+//     else if (t.id == "phoneNumber") {
+//         let numberpattern = /^9\d{9}$/
+//         let result = numberpattern.test(data)
+//         console.log(result);
+//         if (t.value == null || t.value == "") {
+//             t.setAttribute("style", "color:black");
+//         } else {
+//             if (result) {
 
-                t.setAttribute("style", "color:black");
-                console.log("verify")
-                inputdataverify = 0;
-            } else {
-                t.setAttribute("style", "color:red");
-                console.log("verify")
-                inputdataverify = 1
-            }
-        }
+//                 t.setAttribute("style", "color:black");
+//                 console.log("verify")
+//                 inputdataverify = 0;
+//             } else {
+//                 t.setAttribute("style", "color:red");
+//                 console.log("verify")
+//                 inputdataverify = 1
+//             }
+//         }
 
-    }
-    else if (t.id == "studentName") {
-        let numberpattern = /^[a-zA-z]{3,50}$/
-        let result = numberpattern.test(data)
-        console.log(result);
-        if (t.value == null || t.value == "") {
-            t.setAttribute("style", "color:black");
-        } else {
-            if (result) {
+//     }
+//     else if (t.id == "studentName") {
+//         let numberpattern = /^[a-zA-z]{3,50}$/
+//         let result = numberpattern.test(data)
+//         console.log(result);
+//         if (t.value == null || t.value == "") {
+//             t.setAttribute("style", "color:black");
+//         } else {
+//             if (result) {
 
-                t.setAttribute("style", "color:black");
-                console.log("verify")
-                inputdataverify = 0;
-            } else {
-                t.setAttribute("style", "color:red");
-                console.log("verify")
-                inputdataverify = 1
-            }
-        }
+//                 t.setAttribute("style", "color:black");
+//                 console.log("verify")
+//                 inputdataverify = 0;
+//             } else {
+//                 t.setAttribute("style", "color:red");
+//                 console.log("verify")
+//                 inputdataverify = 1
+//             }
+//         }
 
-    }
-
-
+//     }
 
 
-}
+
+
+// }
 
 // function colorborder(t){
 // console.log(t);

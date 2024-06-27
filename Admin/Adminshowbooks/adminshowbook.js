@@ -2,29 +2,29 @@ var bookdata;
 var flag = 0;
 let flag1 = 0;
 var I, book_index;
-let imageurl='../adminaddbooks/bookimg/';
-let click=0
+let imageurl = '../adminaddbooks/bookimg/';
+let click = 0
 function showdetails(event) {
-    click=1;
+    click = 1;
     event.stopPropagation();
     // console.log(bookdata)
 
 
     let x = event.clientX;
     let y = event.clientY;
-    let x1,y1;
-    if(x>1080){
+    let x1, y1;
+    if (x > 1080) {
         x1 = x - 360
-        y1 = y - 250; 
-        console.log('x:'+x)
-        console.log('y:'+y)
-    }else{
-    console.log('x:'+x)
-    console.log('y:'+y)
-    // let x = event.pageX;
-    //  let y = event.pageY;
-    x1 = x + 40;
-    y1 = y - 250;
+        y1 = y - 250;
+        console.log('x:' + x)
+        console.log('y:' + y)
+    } else {
+        console.log('x:' + x)
+        console.log('y:' + y)
+        // let x = event.pageX;
+        //  let y = event.pageY;
+        x1 = x + 40;
+        y1 = y - 250;
     }
     if (flag1 == 0) {
         flag1 = 1;
@@ -37,28 +37,30 @@ function showdetails(event) {
 
     if (flag == 1) {
         I.style.display = "inline-block";
-        let bookstatus=bookdata[book_index].currentquantity==0?"Unavailable":"available";
+        let image = (bookdata[book_index].image == "null") ? "https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user" :imageurl+bookdata[book_index].image;
+        let bookstatus = bookdata[book_index].currentquantity == 0 ? "Unavailable" : "available";
         console.log(book_index);
-        document.querySelector('.hover-image').src = imageurl+bookdata[book_index].image;
+        document.querySelector('.hover-image').src = image;
         document.querySelector('.bookstatus h3').innerHTML = bookstatus;
-        document.querySelector('.bookstatus h3').style.color = bookdata[book_index].currentquantity==0?"red":"green";
+        document.querySelector('.bookstatus h3').style.color = bookdata[book_index].currentquantity == 0 ? "red" : "green";
         document.querySelector('.hover-container .bookname').innerHTML = bookdata[book_index].bookname;
         document.querySelector('.hover-container .catagory').innerHTML = bookdata[book_index].tag;
         document.querySelector('.hover-container .author').innerHTML = bookdata[book_index].authorname;
         document.querySelector('.hover-container .description').innerHTML = bookdata[book_index].description;
-        document.querySelector('.bookstatus i').style.color = bookdata[book_index].currentquantity==0?"red":"green";
-        document.querySelector('.bookstatus i').style.backgroundColor = bookdata[book_index].currentquantity==0?"red":"green";
+        document.querySelector('.bookstatus i').style.color = bookdata[book_index].currentquantity == 0 ? "red" : "green";
+        document.querySelector('.bookstatus i').style.backgroundColor = bookdata[book_index].currentquantity == 0 ? "red" : "green";
         document.querySelector('.hover-container .description').innerHTML = bookdata[book_index].description;
 
 
     }
     if (flag == 0) {
+        let image = (bookdata[book_index].image == "null") ? "https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user" :imageurl+bookdata[book_index].image;
         let hover_data = ` <div class='hover-container'> 
         <div class='image'>
-        <img src="${imageurl+bookdata[book_index].image}"alt='' class="hover-image">
+        <img src="${image }"alt='' class="hover-image">
         <div class='bookstatus'>
-        <span><i class="fa-regular fa-circle" style='color:${bookdata[book_index].currentquantity==0?"red":"green"};background-color:${bookdata[book_index].currentquantity==0?"red":"green"}'></i></span>
-        <h3 style='display:inline-block; color:${bookdata[book_index].currentquantity==0?"red":"green"};'>${bookdata[book_index].currentquantity==0?"Unavailable":"available"}</h3>
+        <span><i class="fa-regular fa-circle" style='color:${bookdata[book_index].currentquantity == 0 ? "red" : "green"};background-color:${bookdata[book_index].currentquantity == 0 ? "red" : "green"}'></i></span>
+        <h3 style='display:inline-block; color:${bookdata[book_index].currentquantity == 0 ? "red" : "green"};'>${bookdata[book_index].currentquantity == 0 ? "Unavailable" : "available"}</h3>
         </div>
         </div>
         <h4 style="display:inline" class="bookname" style="word-break:break-all">${bookdata[book_index].bookname}</h4>
@@ -77,8 +79,8 @@ function showdetails(event) {
 
 }
 function hidedetails() {
-    if(click==1){
-    I.style.display = "none";click=0;
+    if (click == 1) {
+        I.style.display = "none"; click = 0;
     }
 
     flag1 = 0;
@@ -108,10 +110,11 @@ window.addEventListener("load", () => {
             bookdata = data;
             let i = 0;
             data.forEach(data => {
+                let image = (data.image == "null") ?"https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user":imageurl+data.image;
                 let html = ` <div class="book-details" >
             <input type="hidden" value="${i++}">
 
-            <img src="${imageurl+data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+            <img src="${image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
             <div class="icon" onclick="issuebooks(this)">
                 <i class="fa-solid fa-plus"></i>
             </div>
@@ -130,7 +133,7 @@ window.addEventListener("load", () => {
 
 function issuebooks(t) {
 
-    let bookid= t.parentElement.children[4].innerHTML;
+    let bookid = t.parentElement.children[4].innerHTML;
     let bookname = t.parentElement.children[3].children[0].innerHTML;
     let url = new URL("http://localhost/BCA4THPROJECT/admin/adminisuuebook/adminissuebook.php");
     url.searchParams.append('bookname', bookname);
@@ -182,9 +185,11 @@ function searchdata(e) {
                                 count = count + 1;
                             }
                         }
+                        let image = (data.image == "null") ?"https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user":imageurl+data.image;
+
                         let html = ` <div class="book-details" >
             <input type="hidden" value="${count}">
-            <img src="${imageurl+data.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+            <img src="${image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
             <div class="icon" onclick="issuebooks(this)">
                 <i class="fa-solid fa-plus"></i>
             </div>
@@ -213,9 +218,11 @@ function searchdata(e) {
         let count;
         bookdata.forEach(bookdata => {
             count = 0;
+            let image = (bookdata.image == "null") ?"https://img.freepik.com/free-vector/open-blue-book-white_1308-69339.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user":imageurl+bookdata.image;
+
             let html = ` <div class="book-details" >
         <input type="hidden" value="${k}">
-        <img src="${imageurl+bookdata.image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
+        <img src="${image}" alt="error" onclick="showdetails(event)" onmouseout="hidedetails()">
         <div class="icon" onclick="issuebooks(this)">
             <i class="fa-solid fa-plus"></i>
         </div>
@@ -235,6 +242,6 @@ function searchdata(e) {
         document.querySelector(".searchdatalist").style.display = "none";
     }
 }
-function hidesearch(){
+function hidesearch() {
     document.querySelector(".searchdatalist").style.display = "none";
 }

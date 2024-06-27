@@ -13,7 +13,14 @@ function insertbook(e){
     let description=document.querySelector('#Description').value;
     let quantity=document.querySelector('#Quantity').value;
     const form_data=new FormData();
-    form_data.append("image",image.files[0]);
+    console.log(image.files.length);
+    if(image.files.length==0){
+        form_data.append("image","null");
+        form_data.append("imagedata","false");
+    }else{
+        form_data.append("image",image.files[0]);
+        form_data.append("imagedata","true");
+    }
     form_data.append("ISBN",ISBN);
     form_data.append("bookname",bookname);
     form_data.append("authorname",authorname);
@@ -229,3 +236,4 @@ function removedata(t){
         })
     }
 }
+

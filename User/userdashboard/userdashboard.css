@@ -3,6 +3,9 @@
     padding: 0px;
 
 }
+body{
+    user-select: none;
+}
 .maincontainer{
     background-image: url("llibrary.jpg");
 
@@ -96,6 +99,10 @@ section{
 .scroll-container{
     position: relative;
 }
+.dashboard-tag{
+    font-family: math;
+    color: #544766f2;
+}
 .slider-container{
 
     max-width: 100%;
@@ -173,6 +180,9 @@ section{
     height: 100%;
     object-fit: cover;
     
+}
+#homeicon,#homename{
+    color: blue;
 }
 
 .dragging{
